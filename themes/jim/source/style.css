@@ -1,0 +1,308 @@
+@font-face{ 
+  font-family: 'CascadiaCPL';
+  src: url('//cdn.patrickwu.space/fonts/CascadiaPL.ttf') format('truetype');
+}
+
+body {
+  margin: 40px auto;
+  max-width: 650px;
+  line-height: 1.6;
+  font-family: Noto, 'PingFang HK','Microsoft Sans Serif', 'Microsoft JHengHei', sans-serif;
+  font-size: 18px;
+  background-color: #F5F5DC;
+  color: #333;
+  padding: 0 10px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2
+}
+
+/* header extension */
+
+h1:before {
+  content: "# ";
+}
+
+h2:before {
+  content: "## ";
+}
+
+h3:before {
+  content: "### ";
+}
+
+h4:before {
+  content: "#### ";
+}
+
+h5:before {
+  content: "##### ";
+}
+
+h6:before {
+  content: "###### ";
+}
+
+h1 a:hover,
+h1 a:active {
+  text-decoration: none;
+}
+
+/* link extension */
+
+a:link {
+  text-decoration: underline;
+  color: #555;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+  color: #77beec;
+}
+
+/* general extension */
+
+img {
+  outline: none;
+  border: none;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+blockquote {
+  border-left-width: 2px;
+  border-left-color: gray;
+  border-left-style: solid;
+  padding: 0 10px 0;
+}
+
+/* tag extension */
+
+.hometag {
+  border: 1px solid #555;
+  margin: 5px;
+  padding: 0 5px;
+  color: #555;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* code block extension */
+pre {
+  font: 0.8em/1.0em "CascadiaCPL", "Courier New", Courier;
+  color: #222;
+}
+
+code {
+  font: "CascadiaCPL", "Courier New", Courier;
+  color: #AAA;
+  background: #444;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 16px;
+}
+
+.highlight {
+  border-color: #555;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 5px;
+  overflow: auto;
+  background: #DDD;
+}
+
+.highlight .gutter {
+  border-right-color: #555;
+  border-right-style: solid;
+  border-right-width: 0.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.highlight .code {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.highlight figcaption {
+  border-bottom-color: #555;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+}
+
+.highlight figcaption span {
+  margin: 5px;
+}
+
+/* scrollbar extension */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0
+}
+
+::-webkit-scrollbar-button:end:decrement,
+::-webkit-scrollbar-button:start:increment {
+  display: none
+}
+
+::-webkit-scrollbar-corner {
+  display: block
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, .2)
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, .5)
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, .15)
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+
+
+::-webkit-scrollbar-button:end,
+::-webkit-scrollbar-button:start {
+  width: 10px;
+  height: 10px
+}
+
+/* dark/light theme support */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #CCC;
+  }
+
+  a:link {
+    color: #AAA;
+  }
+
+  a:visited {
+    color: #999;
+  }
+
+  pre {
+    color: #999;
+  }
+
+  code {
+    color: #222;
+    background: #AAA;
+  }
+
+  .tag {
+    border-color: #AAA;
+    color: #AAA;
+  }
+
+  .highlight {
+    border-color: #DDD;
+    background: #222;
+  }
+
+  .highlight .gutter {
+    border-right-color: #DDD;
+  }
+
+  .highlight figcaption {
+    border-bottom-color: #DDD;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .2)
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, .5)
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background-color: rgba(255, 255, 255, .15)
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #F5F5DC;
+    color: #333;
+  }
+
+  a:link {
+    color: #555;
+  }
+
+  a:visited {
+    color: #777;
+  }
+
+  pre {
+    color: #222;
+  }
+
+  code {
+    color: #222;
+    background: #DDD;
+  }
+
+  .tag {
+    border-color: #555;
+    color: #555;
+  }
+
+  .highlight {
+    border-color: #555;
+    background: #DDD;
+  }
+
+  .highlight .gutter {
+    border-right-color: #555;
+  }
+
+  .highlight figcaption {
+    border-bottom-color: #555;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .2)
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, .5)
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, .15)
+  }
+
+}

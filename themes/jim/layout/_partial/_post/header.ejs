@@ -1,0 +1,18 @@
+<div>
+
+	<h1><%= page.title|| __('Untitled') %></h1>
+
+	---<br />
+	date: <%= date(page.date,  "MMM DD, YYYY") %><br />
+
+	<% if( page.tags &&  page.tags.length > 0 ) {%>
+	tags:<br />
+	-
+	<%- list_tags( page.tags ,{
+			  show_count:false,
+			  style:'none',
+			  separator:"<br />- "      
+			  }) %>
+	<% }%><br />
+	---
+</div>

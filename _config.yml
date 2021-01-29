@@ -1,0 +1,103 @@
+title: "Listener"
+subtitle: "倾听者" 
+description: Call Me PK | 请叫我PK
+author: Patrick Wu, Jinming
+language: dual
+timezone:
+
+url: https://patrickwu.space
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - CNAME
+  - README.md
+  - 404.html
+  - BingSiteAuth.xml
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+index_generator:
+  path: ''
+  per_page: 20
+  order_by: -date
+  
+default_category: uncategorized
+category_map:
+tag_map:
+
+date_format: MMM Do, YYYY
+time_format: HH:mm:ss
+
+
+per_page: 20
+pagination_dir: page
+
+theme: jim
+
+math:
+  engine: 'katex'
+
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: 
+  plugins:
+    - plugin:
+        name: markdown-it-katex
+        enable: false
+    - plugin:
+        name: markdown-it-mark
+        enable: false
+
+feed:
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+
+colorblock:
+  width: 10
+  height: 10
+  text: false
+
+deploy:
+#  type: shell
+#  command: scp -r public patmain:~/
+  type: git
+  repo: "git@github.com:patrick330602/patrick330602.github.io.git"
+  branch: master

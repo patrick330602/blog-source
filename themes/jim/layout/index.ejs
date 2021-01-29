@@ -1,0 +1,122 @@
+<%# profile %>
+
+<% var profile = theme.profile %>
+
+<h1><%= profile.author || config.author %></h1>
+
+<div>
+<%# about %>
+<h2 style="margin: 20px 0 20px;">About</h2>
+
+<p> Currently working as a software developer in 
+	<a href="https://canonical.com">Canonical</a> mainly developing 
+	<a href="https://ubuntu.com/wsl">Ubuntu for WSL</a>, and persuing <a href="http://msc.cse.cuhk.edu.hk">MSc on Computer Science in CUHK</a>.
+</p>
+<p> Graduated from <a href="https://www.cse.ust.hk/">HKUST as BEng on Computer Science</a>, Main developer of <a
+		href="https://wslutiliti.es">WSL Utilities</a>, and UWP Developer as <a href="https://github.com/wedotstudio">WE. Studio</a>. Previously help developed Pengwin at <a
+		href="https://whitewaterfoundry.com">Whitewater Foundry</a>, and founder of (no longer active) Windows Phone community
+	<a href="https://wp8bartemp.wordpress.com/">WPerfect</a>.</p>
+
+<p>I also gave talks like <a href="https://youtu.be/FX4FKxKJl74">WSL For DevOps and Cross-Platform Development</a> (<a href="https://github.com/whitewaterfoundry/build2019">Resources</a>) at <b>Microsoft Build 2019</b> with Hayden Barnes and <a href="https://youtu.be/2ur-VA2FuZg">Scripting with WSL Interoperability: Tips & Tricks</a>(<a href="/wslconf">Resources</a>) at <b>WSLConf 2020</b>.</p>
+
+<p>You can find me on <a href="http://callmepatrick.unixcab.org" target="_blank">SDF</a>, <a
+		href="https://github.com/patrick330602">GitHub</a>, <a href="https://gitlab.com/callmepk">GitLab</a>, <a
+		href="https://stackoverflow.com/users/8799874/patrick-wu-j-m">Stack Overflow</a>, 	<a href="https://www.linkedin.com/in/patrick-wu-jinming/">LinkedIn</a>, 
+		<a href="https://twitter.com/callmepkwu">Twitter</a>, and <a href="https://unsplash.com/@callmepk">Unsplash</a>.</p>
+
+<p>You can support me via <a href="https://github.com/sponsors/patrick330602">GitHub Sponsors</a> or 
+		<a href="https://www.paypal.me/callmepk/">PayPal</a>, or buy some of my works at <a href="https://callmepk.redbubble.com">Redbubble</a>. </p>
+<p>You can also contact me via <b>me at patrickwu dot space</b>.</p>
+
+<p>My CV in pdf can be found <a href="https://cdn.patrickwu.space/base/cv.pdf">here</a>.</p>
+
+</div>
+
+<div id="sec-post">
+<%# blog %>
+<h2 style="margin: 20px 0 20px;">Posts</h2>
+<% var local_post_count = 0 %>
+<% page.posts.each(function (post) { %>
+<% if( post.categories &&  post.categories.length == 0 && local_post_count < 10 ) {%>
+<p>
+
+	<time><b><%= date(post.date,  "YYYY MMM Do") %></b></time> 
+	<a  href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
+	<br/>><span>
+		<% if( post.tags &&  post.tags.length > 0 ) {%>
+			<%- list_tags( post.tags ,{
+					  show_count:false,
+					  style:'none',
+					  separator:" "
+					  }) %>
+			<% }%>
+	</span>
+</p>
+<% local_post_count += 1 %>
+<% }}) %>
+
+<b>>> <a href="<%- url_for('/archives') %>">More this way!</a></b>
+</div>
+
+<div id="sec-friends">
+<h2 style="margin: 20px 0 20px;">Friends</h2>
+<ul>
+	<% for (var friend in site.data.friends) { %>
+		<li><a href="<%= site.data.friends[friend].link %>"><%= friend %></a><br /><%= site.data.friends[friend].quote %></li>
+	<% } %>
+</ul>
+</div>
+
+<div id="sec-tags">
+<h2 style="margin: 20px 0 20px;">Tags</h2>
+<% site.tags.sort('date',-1).each( function (tag){%>
+<span class="hometag">
+	<a style="text-decoration: none;" href="<%- url_for(tag.path) %>"><%- tag.name %> - <%- tag.length %></a>
+</span>
+<% })%>
+</div>
+
+<!-- <h2 style="margin: 20px 0 20px;">Projects</h2>
+<ul>
+	<li>WSL Utilities<br />
+		[ Freenode: #wslu | <a href="https://wslutiliti.es/">Website</a> | <a
+			href="https://twitter.com/wslutilities">Twitter</a> ]
+	</li>
+	<li>WE. Studio<br />
+		[ <a href="https://github.com/wedotstudio">GitHub</a> ]
+		<ul>
+			<li>UWP DevKit - A simple but complete developer toolkit for UWP developers<br />
+				[ <a href="https://github.com/wedotstudio/uwp-devkit">GitHub</a> | <a
+					href="https://www.microsoft.com/store/apps/9nblggh5p90f">Microsoft Store</a> ]</li>
+			<li>Fcus - A minimal Markdown UWP editor based on HTML5 and Javascript<br />
+				[ <a href="https://github.com/wedotstudio/fcus">GitHub</a> | <a
+					href="https://www.microsoft.com/store/apps/9nblggh4trr4">Microsoft Store</a> ]</li>
+		</ul>
+	</li>
+	<li>ust_course_to_json - HKUST ARR Course WebSpider<br />
+		[ <a herf="https://github.com/patrick330602/ust_course_to_json">GitHub</a> ]</li>
+	<li>grewritingpool - Python Web Sidper for GRE Writing Pool<br />
+		[ <a href="https://github.com/patrick330602/grewritingpool">GitHub</a> | <a
+			href="https://pypi.org/project/grewritingpool/">PyPI</a> ]</li>
+	<li>hexo-tag-color-block - Create Color Block Easily on Hexo<br />
+		[ <a href="https://github.com/patrick330602/hexo-tag-color-block">GitHub</a> | <a
+			href="https://www.npmjs.com/package/hexo-tag-color-block">NPM</a> ]</li>
+	<li>linuxer - A powerful Oh-My-Zsh theme series<br />
+		[ <a href="https://github.com/patrick330602/linuxer">GitHub</a> ]</li>
+	<li>termuxer - A oh-my-zsh theme for termux<br />
+		[ <a href="https://github.com/patrick330602/termuxer">GitHub</a> ]</li>
+	<li>startpages - My startpages build for Homepage of browsers <br />
+		[ <a href="https://startpages.patrickwu.space/">Website</a> | <a
+			href="https://github.com/patrick330602/startpages">GitHub</a> ]</li>
+</ul>
+
+<h2 style="margin: 20px 0 20px;">Multimedia Works</h2>
+
+<p>My photographs are both availble on <a href="https://www.behance.net/patrick_wu">Behance</a> and <a
+		href="https://unsplash.com/@callmepk">Unsplash</a>. You can find the videos I made on <a
+		href="https://www.youtube.com/channel/UCnHes9zqgt2cEUdg3kMw6wg">Youtube</a>.</p>
+<ul>
+	<li>SurfaceLinux Wallpaper - a wallpaper series <br />
+		[ <a href="https://github.com/patrick330602/surfacelinux-wallpapers">GitHub</a> ]</li>
+	<li>Jokes on Me - A comic about me. (Under Construction)</li>
+</ul> -->

@@ -1,0 +1,14 @@
+<section>
+
+    <h1>Archives</h1>
+   
+    <% page.posts.each(function (post) { %>
+        <div>
+          <time><b><%= date(post.date,  "YYYY MMM Do") %></b></time> - 
+          <a  href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
+        </div>
+
+    <% }) %>
+</section>
+
+<%- partial('_partial/paginator') %>

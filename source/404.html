@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body,
+        html {
+            font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            color: white;
+        }
+
+        a {
+            display: inline;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:link {
+            color: azure;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: azure;
+        }
+        a:active {
+            color: azure;
+        }
+        a:visited {
+            color: aliceblue;
+        }
+
+        #bg {
+            background-image: url("https://cdn.patrickwu.space/base/404-bg.gif");
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-clip: border-box;
+            background-origin: padding-box;
+            background-size: cover;
+            background-position: bottom;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        #cover {
+            background-color: rgba(0, 0, 0, 0.9);
+            opacity: 0.8;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        #content {
+            text-align: center;
+            position: center center;
+            align-content: center;
+        }
+
+        #fof {
+            text-align: center;
+            font-size: 80px;
+            color: grey;
+        }
+
+        #fog {
+            text-align: center;
+            font-size: 30px;
+            color: grey;
+        }
+
+        #parent {
+            text-align: center;
+            font-size: 12px;
+        }
+
+        #child {
+            text-align: center;
+            padding: 20px 80px;
+            display: none;
+            font-size: 10px;
+        }
+
+        #parent:hover #child {
+            display: block;
+        }
+    </style>
+    <title>Umm.... You are lost.</title>
+</head>
+
+<body>
+    <div id="bg">
+        <div id="cover"></div>
+    </div>
+    <div id="content">
+        <div id="fof">
+            404.
+            
+        </div>
+    <div id="fog">
+        Umm.... You are lost.
+    </div>
+        <div id="parent">
+            Do you mean...
+            <div id='child'>
+                <pre>
+404.0 - Not found. 
+404.1 - Site Not Found. 
+404.2 - ISAPI or CGI restriction. 
+404.3 - MIME type restriction. 
+404.4 - No handlerconfigured. 
+404.5 - Denied by request filtering configuration. 
+404.6 - Verb denied. 
+404.7 - File extension denied. 
+404.8 - Hidden namespace. 
+404.9 - File attribute hidden. 
+404.10 - Request header too long. 
+404.11 - Request contains double escape sequence. 
+404.12 - Request contains high-bit characters. 
+404.13 - Content length too large. 
+404.14 - Request URL too long. 
+404.15 - Query string too long. 
+404.16 - DAV request sent to the static file handler. 
+404.17 - Dynamic content mapped to the static file handler via a wildcard MIME mapping. 
+404.18 - Query string sequence denied. 
+404.19 - Denied by filtering rule. 
+404.20 - Too Many URL Segments.
+                </pre>
+            </div>
+        </div>
+        <center><a href="https://patrickwu.space/">Bring Me Back</a></center>
+        <center><img src="https://cdn.patrickwu.space/base/404.gif" /></center>
+    </div>
+</body>
+
+</html>

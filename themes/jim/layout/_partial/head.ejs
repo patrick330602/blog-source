@@ -1,0 +1,30 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <%
+    var title = titlecase(page.title);
+
+    if (is_archive()){
+      title = __('Page.Archives');   
+    } else if (is_category()){
+      title = page.category;
+    } else if (is_tag()){
+      title = __('Page.Tags') + ': ' + page.tag;
+  }
+  %>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@patrick330602" />
+  <meta name="twitter:creator" content="@patrick330602" />
+  <meta property="og:url" content="<%= config.url + '/' + page.path %>" />
+  <meta property="og:title" content="<% if (title){ %><%= title %> | <% } %><%= config.title %>" />
+  <meta property="og:image" content="https://cdn.patrickwu.space/base/social.png" />
+  <title><% if (title){ %>  <%= title %> | <% } %><%= config.title %> </title>
+
+ 
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- url_for(  theme.favicon ) %>">
+  <% } %>
+
+  <%- js('honk.js') %>
+  <%- css('style') %> 
+</head>

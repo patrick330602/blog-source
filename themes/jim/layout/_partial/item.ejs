@@ -1,0 +1,6 @@
+<% if(post) {%>
+<article>
+  <time><b><%= date(post.date,  "MMM Do, YYYY") %></b></time> - 
+  <a href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
+</article>
+<% } %>
