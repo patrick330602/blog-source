@@ -8,7 +8,7 @@ date: 2021-02-02 15:36:44
 
 Well well well, here we go again.
 
-I recently received a bug report that when there are umlauts in their username ([wslutilities/wslu#162](https://github.com/wslutilities/wslu/issues/162)), `wslusc` failed to copy the file. In His username is "StephanHochdörfer" and the output is the following:
+I recently received a bug report that when there are umlauts in their username ([wslutilities/wslu#162](https://github.com/wslutilities/wslu/issues/162)), `wslusc` failed to copy the file. In his case, the username is "StephanHochdörfer," and the output is the following:
 ```
 ...
 [warn] wsl.ico not found in Windows directory. Copying right now...
@@ -20,7 +20,7 @@ cp: cannot create regular file '/mnt/c/Users/StephanHochd'$'\224''rfer/wslu': No
 
 ![Oh no! Anyway...](https://cdn.patrickwu.space/memes/oh-no-anyway.jpeg)
 
-Oh no! Anyway, it's definitely related to the code page mess in our good old `powershell.exe`. What a great sequel to our [powershell raster font problem](https://patrickwu.space/2019/08/03/wsl-powershell-raster-font-problem/).
+Oh no! Anyway, it's related to the code page mess in our good old `powershell.exe` —- what a great sequel to our [powershell raster font problem](https://patrickwu.space/2019/08/03/wsl-powershell-raster-font-problem/).
 
 From last time, we already get a pretty good structure that solves raster font, so we will expand from there:
 
@@ -31,7 +31,7 @@ powershell.exe ...
 chcp.com 65001
 ```
 
-`powershell.exe` have an interesting way in its input/output encoding, that it will follow the system code page. You can actually type `[Console]::OutputEncoding` and `[Console]::InputEncoding` in Powershell, and you can actually see what language/encoding/code page your console you are currently using (Mine here is already corrupted during the debug):
+`powershell.exe` has an interesting way in its input/output encoding, that it will follow the system code page. You can type `[Console]::OutputEncoding` and `[Console]::InputEncoding` in Powershell, and you can see what language/encoding/code page your console is currently using (Mine here is already corrupted during the debugging):
 
 ![My messed up encoding](https://cdn.patrickwu.space/posts/dev/wsl/wsl-winps-encoding-1.png)
 
