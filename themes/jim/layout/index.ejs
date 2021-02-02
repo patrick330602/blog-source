@@ -62,7 +62,7 @@
 <h2 style="margin: 20px 0 20px;">Friends</h2>
 <ul>
 	<% for (var friend in site.data.friends) { %>
-		<li><a href="<%= site.data.friends[friend].link %>"><%= friend %></a><br /><%= site.data.friends[friend].quote %></li>
+		<li><a href="<%= site.data.friends[friend] %>"><%= friend %></a></li>
 	<% } %>
 </ul>
 </div>
