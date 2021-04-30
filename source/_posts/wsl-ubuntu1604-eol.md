@@ -6,7 +6,7 @@ tags:
 - WSL
 ---
 
-Ubuntu 16.04 LTS reached End-Of-Life today. This also means Ubuntu 16.04 on Windows also will get off from the Microsoft Store. For people still use Ubuntu 16.04 on WSL, unless you have purchased [ESM (Extended Security Maintainance)](https://ubuntu.com/security/esm) as part of Ubuntu Advantage, you will not able to upgrade packages on Ubuntu 16.04 LTS. If you still have a WSL instance running Ubuntu 16.04 LTS, you can take the following actions.
+Ubuntu 16.04 LTS reached End-Of-Life today. This also means Ubuntu 16.04 on Windows also will get off from the Microsoft Store. For people who still use Ubuntu 16.04 on WSL, unless you have purchased [ESM (Extended Security Maintainance)](https://ubuntu.com/security/esm) as part of Ubuntu Advantage, you will not be able to upgrade packages on Ubuntu 16.04 LTS. If you still have a WSL instance running Ubuntu 16.04 LTS, you can take the following actions.
 
 ## Move Ubuntu 16.04 images to another Ubuntu UWP
 
@@ -26,7 +26,7 @@ Export your current distro to a tarball:
 wsl --export Ubuntu-16.04 ubuntu1604.tar
 ```
 
-You should also use this as a copy of your original Ubuntu 16.04 backup.
+It would be best if you also used this as a copy of your original Ubuntu 16.04 backup.
 
 ### Install
 
@@ -58,11 +58,11 @@ wsl --import Ubuntu C:\Users\<Your Windows Username>\AppData\Local\Packages\Cano
 ubuntu.exe config --default-user <Your WSL Username>
 ```
 
-And then you are done! Now we should now upgrade your system to a supported one:
+And then you are done! Now we should upgrade your system to a supported one:
 
 ## Upgrading Ubuntu 16.04 to the latest supported version
 
-You should still be able to upgrade to the latest supported version as the time of this article is written. But if you miss the deadline, you should follow the following method to perform the release upgrade.
+You should still be able to upgrade to the latest supported version when this article is written. But if you miss the deadline, you should follow the following method to perform the release upgrade.
 
 ### Update sources.list
 
@@ -81,7 +81,7 @@ deb http://old-releases.ubuntu.com/ubuntu/ xenial-security main restricted unive
 You can use `-backports` and or `-proposed` if you want. 
 
 ### Dependencies
-You should also make sure meta-package `ubuntu-wsl` are installed so the upgrade can continue without problems.
+It would help if you also made sure meta-package `ubuntu-wsl` is installed so the upgrade can continue without problems.
 
 ### Run the upgrade
 After you've done the above, run the updates and then the upgrade as usually:
