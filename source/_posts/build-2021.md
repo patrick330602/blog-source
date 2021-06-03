@@ -22,7 +22,7 @@ To my disappointment, there is not much new in this build. This build generally 
 
 ## .NET
 
-The sessions about .NET is packed with information, although there is nearly 1-digit number of sessions about it. .NET Upgrade Assistant (Help upgrade .NET project to latest version) would be possibly a great tool for me to migrate my old projects to newer version, and .NET 6 with its Single stack (only one SDK, BCL, Toolchain for cross-platform) structure made it looks really promising.  Here is a quick sum up from the session:
+The sessions about .NET is packed with information, although there is nearly 1-digit number of sessions about it. .NET Upgrade Assistant (Help upgrade .NET project to latest version) would be possibly a great tool for me to migrate my old projects to newer version, and .NET 6 with its Single stack (only one SDK, BCL, Toolchain for cross-platform) structure made it looks really promising.  Here is a quick sum up from the [session](https://docs.microsoft.com/en-us/events/build-may-2021/azure/breakouts/od485/?ocid=AID3032299):
 
 - C# 10
   - Syntactic Simplications
