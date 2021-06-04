@@ -1,0 +1,30 @@
+name: CD
+on: [push]
+jobs:
+  build:
+    name: Generate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - name: Pre-configuration
+        run: |
+          npm install
+          npm install hexo-cli -g
+      - name: Generate
+        run: |
+          hexo clean
+          hexo generate
+      - name: Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GIT_DEPLOY_KEY }}
+        run: |
+          git config --global user.email "me@patrickwu.space"
+          git config --global user.name "Jinming Wu, Patrick"
+          git clone --depth 1 https://patrick330602:$GH_TOKEN@github.com/patrick330602/patrick330602.github.io.git website
+          cp -rf ./public/* ./website/
+          git --git-dir=./website/.git --work-tree=./website add -A
+          git --git-dir=./website/.git --work-tree=./website commit -m "blog update at $(date)"
+          git --git-dir=./website/.git --work-tree=./website push
