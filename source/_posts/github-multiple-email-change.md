@@ -1,5 +1,6 @@
 ---
 title: How to change multiple emails in Your Repos
+date: 2016-07-13 11:08:56
 tags:
 - GitHub
 - Shell
