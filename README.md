@@ -1,6 +1,6 @@
 # Source code of <https://patrickwu.space>
 
-This repo hosts the source code of <https://patrickwu.space>, which uses Hexo and is currently running on DigitalOcean App Platform.
+This repo hosts the source code of <https://patrickwu.space>, which uses Hexo and is currently running on GitHub Pages.
 
 ## License
 
