@@ -25,16 +25,35 @@
     <link rel="icon" href="<%- url_for(  theme.favicon ) %>">
   <% } %>
 
-
-<!-- Start Open Web Analytics Tracker -->
 <script type="text/javascript">
   //<![CDATA[
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  function Toptout() {
+    document.cookie = "patblog_track_is_opt_out=a; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/;";
+    window['patblog_track_is_opt_out'] = 'a';
+  }
   var owa_baseUrl = 'https://api.patrickwu.space/analytics/';
   var owa_cmds = owa_cmds || [];
+  is_opt_out=getCookie("patblog_track_is_opt_out");
   owa_cmds.push(['setSiteId', 'f134ed8fb95667ce94bbca095d32af45']);
+  if(is_opt_out != "" ) {owa_cmds.push(['pause-owa']);}
   owa_cmds.push(['trackPageView']);
   owa_cmds.push(['trackClicks']);
   owa_cmds.push(['trackDomStream']);
+  if(is_opt_out != "" ) {owa_cmds.push(['unpause-owa']);}
   
   (function() {
       var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
@@ -44,7 +63,6 @@
   }());
   //]]>
   </script>
-  <!-- End Open Web Analytics Code -->
 
   <%- js('honk.js') %>
   <%- css('style') %> 
