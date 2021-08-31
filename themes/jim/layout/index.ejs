@@ -5,75 +5,95 @@
 <h1><%= profile.author || config.author %></h1>
 
 <div>
-<%# about %>
-<h2 style="margin: 20px 0 20px;">About</h2>
+	<%# about %>
+	<h2 style="margin: 20px 0 20px;">About</h2>
 
-<p> Currently working as a software developer in 
-	<a href="https://canonical.com">Canonical</a> mainly developing 
-	<a href="https://ubuntu.com/wsl">Ubuntu for WSL</a>, and persuing <a href="http://msc.cse.cuhk.edu.hk">MSc on Computer Science in CUHK</a>.
-</p>
-<p> Graduated from <a href="https://www.cse.ust.hk/">HKUST as BEng on Computer Science</a>, Main developer of <a
-		href="https://wslutiliti.es">WSL Utilities</a>, and UWP Developer as <a href="https://github.com/wedotstudio">WE. Studio</a>. Previously help developed Pengwin at <a
-		href="https://whitewaterfoundry.com">Whitewater Foundry</a>, and founder of (no longer active) Windows Phone community
-	<a href="https://wp8bartemp.wordpress.com/">WPerfect</a>.</p>
+	<p> Currently working as a software developer in
+		<a href="https://canonical.com">Canonical</a> mainly developing
+		<a href="https://ubuntu.com/wsl">Ubuntu for WSL</a>, and persuing <a href="http://msc.cse.cuhk.edu.hk">MSc on
+			Computer Science in CUHK</a>.
+	</p>
+	<p> Graduated from <a href="https://www.cse.ust.hk/">HKUST as BEng on Computer Science</a>, Main developer of <a
+			href="https://wslutiliti.es">WSL Utilities</a>, and UWP Developer as <a
+			href="https://github.com/wedotstudio">WE. Studio</a>. Previously help developed Pengwin at <a
+			href="https://whitewaterfoundry.com">Whitewater Foundry</a>, and founder of (no longer active) Windows Phone
+		community
+		<a href="https://wp8bartemp.wordpress.com/">WPerfect</a>.</p>
 
-<p>I also gave talks like <a href="https://youtu.be/FX4FKxKJl74">WSL For DevOps and Cross-Platform Development</a> (<a href="https://github.com/whitewaterfoundry/build2019">Resources</a>) at <b>Microsoft Build 2019</b> with Hayden Barnes and <a href="https://youtu.be/2ur-VA2FuZg">Scripting with WSL Interoperability: Tips & Tricks</a>(<a href="/wslconf">Resources</a>) at <b>WSLConf 2020</b>.</p>
+	<p>I also gave talks like <a href="https://youtu.be/FX4FKxKJl74">WSL For DevOps and Cross-Platform Development</a>
+		(<a href="https://github.com/whitewaterfoundry/build2019">Resources</a>) at <b>Microsoft Build 2019</b> with
+		Hayden Barnes and <a href="https://youtu.be/2ur-VA2FuZg">Scripting with WSL Interoperability: Tips &
+			Tricks</a>(<a href="/wslconf">Resources</a>) at <b>WSLConf 2020</b>.</p>
 
-<p>You can find me on <a href="http://callmepatrick.unixcab.org" target="_blank">SDF</a>, <a
-		href="https://github.com/patrick330602">GitHub</a>, <a href="https://gitlab.com/callmepk">GitLab</a>, <a
-		href="https://stackoverflow.com/users/8799874/patrick-wu-j-m">Stack Overflow</a>, 	<a href="https://www.linkedin.com/in/patrick-wu-jinming/">LinkedIn</a>, 
-		<a href="https://twitter.com/callmepkwu">Twitter</a>, and <a href="https://unsplash.com/@callmepk">Unsplash</a>.</p>
+	<p>You can support me via <a href="https://github.com/sponsors/patrick330602">GitHub Sponsors</a> or
+		<a href="https://www.paypal.me/callmepk/">PayPal</a>, or buy some of my works at <a
+			href="https://callmepk.redbubble.com">Redbubble</a>. </p>
+	<p>You can also contact me via <b>me at patrickwu dot space</b>.</p>
 
-<p>You can support me via <a href="https://github.com/sponsors/patrick330602">GitHub Sponsors</a> or 
-		<a href="https://www.paypal.me/callmepk/">PayPal</a>, or buy some of my works at <a href="https://callmepk.redbubble.com">Redbubble</a>. </p>
-<p>You can also contact me via <b>me at patrickwu dot space</b>.</p>
+	<p>My CV in pdf can be found <a href="https://cdn.patrickwu.space/base/cv.pdf">here</a>.</p>
 
-<p>My CV in pdf can be found <a href="https://cdn.patrickwu.space/base/cv.pdf">here</a>.</p>
+	<div class="wrap-collabsible"> <input id="collapsible" class="toggle" type="checkbox"> <label for="collapsible"
+			class="lbl-toggle">Find me on:</label>
+		<div class="collapsible-content">
+			<div class="content-inner">
+				<p><ul>
+					<li><a href="http://callmepatrick.unixcab.org" target="_blank">SDF</a></li>
+					<li><a href="https://github.com/patrick330602">GitHub</a></li>
+					<li><a href="https://gitlab.com/callmepk">GitLab</a></li>
+					<li><a href="https://stackoverflow.com/users/8799874/patrick-wu-j-m">Stack Overflow</a></li>
+					<li><a href="https://www.linkedin.com/in/patrick-wu-jinming/">LinkedIn</a></li>
+					<li><a href="https://twitter.com/callmepkwu">Twitter</a></li>
+					<li><a href="https://unsplash.com/@callmepk">Unsplash</a></li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
 
 </div>
 
 <div id="sec-post">
-<%# blog %>
-<h2 style="margin: 20px 0 20px;">Posts</h2>
-<% var local_post_count = 0 %>
-<% page.posts.each(function (post) { %>
-<% if( post.categories &&  post.categories.length == 0 && local_post_count < 10 ) {%>
-<p>
+	<%# blog %>
+	<h2 style="margin: 20px 0 20px;">Posts</h2>
+	<% var local_post_count = 0 %>
+	<% page.posts.each(function (post) { %>
+	<% if( post.categories &&  post.categories.length == 0 && local_post_count < 10 ) {%>
+	<p>
 
-	<time><b><%= date(post.date,  "YYYY MMM Do") %></b></time> 
-	<a  href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
-	<br/>><span>
-		<% if( post.tags &&  post.tags.length > 0 ) {%>
+		<time><b><%= date(post.date,  "YYYY MMM Do") %></b></time>
+		<a href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
+		<br />><span>
+			<% if( post.tags &&  post.tags.length > 0 ) {%>
 			<%- list_tags( post.tags ,{
 					  show_count:false,
 					  style:'none',
 					  separator:" "
 					  }) %>
 			<% }%>
-	</span>
-</p>
-<% local_post_count += 1 %>
-<% }}) %>
+		</span>
+	</p>
+	<% local_post_count += 1 %>
+	<% }}) %>
 
-<b>>> <a href="<%- url_for('/archives') %>">More this way!</a></b>
+	<b>>> <a href="<%- url_for('/archives') %>">More this way!</a></b>
 </div>
 
 <div id="sec-friends">
-<h2 style="margin: 20px 0 20px;">Friends</h2>
-<ul>
-	<% for (var friend in site.data.friends) { %>
+	<h2 style="margin: 20px 0 20px;">Friends</h2>
+	<ul>
+		<% for (var friend in site.data.friends) { %>
 		<li><a href="<%= site.data.friends[friend] %>"><%= friend %></a></li>
-	<% } %>
-</ul>
+		<% } %>
+	</ul>
 </div>
 
 <div id="sec-tags">
-<h2 style="margin: 20px 0 20px;">Tags</h2>
-<% site.tags.sort('name',1).each( function (tag){%>
-<span class="hometag">
-	<a style="text-decoration: none;" href="<%- url_for(tag.path) %>"><%- tag.name %> - <%- tag.length %></a>
-</span>
-<% })%>
+	<h2 style="margin: 20px 0 20px;">Tags</h2>
+	<% site.tags.sort('name',1).each( function (tag){%>
+	<span class="hometag">
+		<a style="text-decoration: none;" href="<%- url_for(tag.path) %>"><%- tag.name %> - <%- tag.length %></a>
+	</span>
+	<% })%>
 </div>
 
 <!-- <h2 style="margin: 20px 0 20px;">Projects</h2>
