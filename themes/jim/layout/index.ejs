@@ -10,10 +10,8 @@
 
 	<p> Currently working as a software developer in
 		<a href="https://canonical.com">Canonical</a> mainly developing
-		<a href="https://ubuntu.com/wsl">Ubuntu for WSL</a>, and persuing <a href="http://msc.cse.cuhk.edu.hk">MSc on
-			Computer Science in CUHK</a>.
-	</p>
-	<p> Graduated from <a href="https://www.cse.ust.hk/">HKUST as BEng on Computer Science</a>, Main developer of <a
+		<a href="https://ubuntu.com/wsl">Ubuntu for WSL</a>. Graduated from <a href="https://www.cse.ust.hk/">HKUST as BEng on Computer Science</a> and <a href="http://msc.cse.cuhk.edu.hk">CUHK as MSc on
+			Computer Science</a>, Main developer of <a
 			href="https://wslutiliti.es">WSL Utilities</a>, and UWP Developer as <a
 			href="https://github.com/wedotstudio">WE. Studio</a>. Previously help developed Pengwin at <a
 			href="https://whitewaterfoundry.com">Whitewater Foundry</a>, and founder of (no longer active) Windows Phone
@@ -54,7 +52,20 @@
 						Tricks</a> (<a href="/wslconf">Resources</a>) @ <b>WSLConf 2020</b>.</li>
 					<li><a href="https://youtu.be/6KlAYAyihe8">WSL Panel on WSL Utilities, Kernel, Ubuntu news and Windows Integration</a> Hosted by <b><a href="https://www.youtube.com/channel/UC3FS96NUdoR3DwkaDwiLdRw">AzureTar</a></b></li>
 					<li><a href="https://youtu.be/NcM5zBmCrZA">WSL Series 2 - Advanced WSL2</a> @ <b><a href="https://www.youtube.com/playlist?list=PL5uLNcv9SibDJNEJBu8N8VhV-QkE6ZFQQ">WSL Days</a></b></li>
-					<li>(Coming Soon) <a href="https://2021.ubucon.asia/sessions/developing_on_ubuntu_with_wsl_interoperability_tips_and_tricks/">Developing on Ubuntu with WSL Interoperability: Tips and Tricks</a> @ <b>Ubucon Asia 2021</b></li>
+					<li><a href="https://2021.ubucon.asia/sessions/developing_on_ubuntu_with_wsl_interoperability_tips_and_tricks/">Developing on Ubuntu with WSL Interoperability: Tips and Tricks</a> @ <b>Ubucon Asia 2021</b></li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div>
+		<input id="toggle-list-3" class="toggle" type="checkbox">
+		<label for="toggle-list-3" class="fancy-toggle-1">Also, here are my friends:</label>
+		<div class="list">
+			<p>
+				<ul>
+					<% for (var friend in site.data.friends) { %>
+					<li><a href="<%= site.data.friends[friend] %>"><%= friend %></a></li>
+					<% } %>
 				</ul>
 			</p>
 		</div>
@@ -85,15 +96,6 @@
 	<% }}) %>
 
 	<b>>> <a href="<%- url_for('/archives') %>">More this way!</a></b>
-</div>
-
-<div id="sec-friends">
-	<h2 style="margin: 20px 0 20px;">Friends</h2>
-	<ul>
-		<% for (var friend in site.data.friends) { %>
-		<li><a href="<%= site.data.friends[friend] %>"><%= friend %></a></li>
-		<% } %>
-	</ul>
 </div>
 
 <div id="sec-tags">
