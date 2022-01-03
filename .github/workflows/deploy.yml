@@ -6,13 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
+      - uses: actions/setup-node@v2
         with:
-          cmd: install
+          node-version: 12
+      - name: Pre-configuration
+        run: |
+          npm install
+          npm install hexo-cli -g
       - name: Generate
         run: |
-          ./node_modules/bin/hexo clean
-          ./node_modules/bin/hexo generate
+          hexo clean
+          hexo generate
       - name: Deploy
         env:
           GH_TOKEN: ${{ secrets.GIT_DEPLOY_KEY }}
