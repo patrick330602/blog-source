@@ -11,8 +11,8 @@ jobs:
           cmd: install
       - name: Generate
         run: |
-          hexo clean
-          hexo generate
+          ./node_modules/bin/hexo clean
+          ./node_modules/bin/hexo generate
       - name: Deploy
         env:
           GH_TOKEN: ${{ secrets.GIT_DEPLOY_KEY }}
