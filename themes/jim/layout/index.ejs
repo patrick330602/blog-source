@@ -2,11 +2,11 @@
 
 <% var profile = theme.profile %>
 
-<h1><%= profile.author || config.author %></h1>
+<h1><%= config.title %></h1>
 
 <div>
 	<%# about %>
-	<h2 style="margin: 20px 0 20px;">About</h2>
+	<h2 style="margin: 20px 0 20px;"><%= __('common.about') %> </h2>
 
 	<p>  Graduated from <a href="https://www.cse.ust.hk/">HKUST as BEng on Computer Science</a> and <a href="http://msc.cse.cuhk.edu.hk">CUHK as MSc on
 			Computer Science</a>, Main developer of <a
@@ -28,13 +28,10 @@
 		<div class="list">
 			<p>
 				<ul>
+					<% for (var i in site.data.social) { %>
+						<li><a href="<%= site.data.social[i] %>"><%= i %></a></li>
+					<% } %>
 					<li><a href="http://callmepatrick.unixcab.org" target="_blank">SDF</a></li>
-					<li><a href="https://github.com/patrick330602">GitHub</a></li>
-					<li><a href="https://gitlab.com/callmepk">GitLab</a></li>
-					<li><a href="https://stackoverflow.com/users/8799874/patrick-wu-j-m">Stack Overflow</a></li>
-					<li><a href="https://www.linkedin.com/in/patrick-wu-jinming/">LinkedIn</a></li>
-					<li><a href="https://twitter.com/callmepkwu">Twitter</a></li>
-					<li><a href="https://unsplash.com/@callmepk">Unsplash</a></li>
 				</ul>
 			</p>
 		</div>
@@ -74,13 +71,13 @@
 
 <div id="sec-post">
 	<%# blog %>
-	<h2 style="margin: 20px 0 20px;">Posts</h2>
+	<h2 style="margin: 20px 0 20px;"><%= __('common.posts') %> | <a href="<%- url_for(lang_prepend('/tags')) %>"><%= __('common.tags') %> </a></h2>
 	<% var local_post_count = 0 %>
 	<% page.posts.each(function (post) { %>
 	<% if( post.categories &&  post.categories.length == 0 && local_post_count < 10 ) {%>
 	<p>
 
-		<time><b><%= date(post.date,  "YYYY MMM Do") %></b></time>
+		<time><b><%= format_date_full(post.date) %></b></time>
 		<a href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
 		<br />><span>
 			<% if( post.tags &&  post.tags.length > 0 ) {%>
@@ -95,59 +92,6 @@
 	<% local_post_count += 1 %>
 	<% }}) %>
 
-	<b>>> <a href="<%- url_for('/archives') %>">More this way!</a></b>
+	<b>>> <a href="<%- url_for(lang_prepend('/archives')) %>"><%= __('common.more') %> </a></b>
 </div>
 
-<div id="sec-tags">
-	<h2 style="margin: 20px 0 20px;">Tags</h2>
-	<% site.tags.sort('name',1).each( function (tag){%>
-	<span class="hometag">
-		<a style="text-decoration: none;" href="<%- url_for(tag.path) %>"><%- tag.name %> - <%- tag.length %></a>
-	</span>
-	<% })%>
-</div>
-
-<!-- <h2 style="margin: 20px 0 20px;">Projects</h2>
-<ul>
-	<li>WSL Utilities<br />
-		[ Freenode: #wslu | <a href="https://wslutiliti.es/">Website</a> | <a
-			href="https://twitter.com/wslutilities">Twitter</a> ]
-	</li>
-	<li>WE. Studio<br />
-		[ <a href="https://github.com/wedotstudio">GitHub</a> ]
-		<ul>
-			<li>UWP DevKit - A simple but complete developer toolkit for UWP developers<br />
-				[ <a href="https://github.com/wedotstudio/uwp-devkit">GitHub</a> | <a
-					href="https://www.microsoft.com/store/apps/9nblggh5p90f">Microsoft Store</a> ]</li>
-			<li>Fcus - A minimal Markdown UWP editor based on HTML5 and Javascript<br />
-				[ <a href="https://github.com/wedotstudio/fcus">GitHub</a> | <a
-					href="https://www.microsoft.com/store/apps/9nblggh4trr4">Microsoft Store</a> ]</li>
-		</ul>
-	</li>
-	<li>ust_course_to_json - HKUST ARR Course WebSpider<br />
-		[ <a herf="https://github.com/patrick330602/ust_course_to_json">GitHub</a> ]</li>
-	<li>grewritingpool - Python Web Sidper for GRE Writing Pool<br />
-		[ <a href="https://github.com/patrick330602/grewritingpool">GitHub</a> | <a
-			href="https://pypi.org/project/grewritingpool/">PyPI</a> ]</li>
-	<li>hexo-tag-color-block - Create Color Block Easily on Hexo<br />
-		[ <a href="https://github.com/patrick330602/hexo-tag-color-block">GitHub</a> | <a
-			href="https://www.npmjs.com/package/hexo-tag-color-block">NPM</a> ]</li>
-	<li>linuxer - A powerful Oh-My-Zsh theme series<br />
-		[ <a href="https://github.com/patrick330602/linuxer">GitHub</a> ]</li>
-	<li>termuxer - A oh-my-zsh theme for termux<br />
-		[ <a href="https://github.com/patrick330602/termuxer">GitHub</a> ]</li>
-	<li>startpages - My startpages build for Homepage of browsers <br />
-		[ <a href="https://startpages.patrickwu.space/">Website</a> | <a
-			href="https://github.com/patrick330602/startpages">GitHub</a> ]</li>
-</ul>
-
-<h2 style="margin: 20px 0 20px;">Multimedia Works</h2>
-
-<p>My photographs are both availble on <a href="https://www.behance.net/patrick_wu">Behance</a> and <a
-		href="https://unsplash.com/@callmepk">Unsplash</a>. You can find the videos I made on <a
-		href="https://www.youtube.com/channel/UCnHes9zqgt2cEUdg3kMw6wg">Youtube</a>.</p>
-<ul>
-	<li>SurfaceLinux Wallpaper - a wallpaper series <br />
-		[ <a href="https://github.com/patrick330602/surfacelinux-wallpapers">GitHub</a> ]</li>
-	<li>Jokes on Me - A comic about me. (Under Construction)</li>
-</ul> -->

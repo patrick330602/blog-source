@@ -1,8 +1,6 @@
 <section>
-    <% if( is_tag()){ %>
-
     <span class="page-title">
-        <h1><%= "Tag: " + page.tag %></h1>
+        <h1><%= __('common.tag') + ": " + page.tag %></h1>
     </span>
 
     <% page.posts.each(function (post) { %>
@@ -11,13 +9,4 @@
 
     <% }) %>
     <%- partial('_partial/paginator') %>
-    <% } else { %>
-    <h1>Tags</h1>
-
-    <% site.tags.sort('date',-1).each( function (tag){%>
-    <span class="hometag">
-        <a style="text-decoration: none;" href="<%- url_for(tag.path) %>"><%- tag.name %> - <%- tag.length %></a>
-    </span>
-    <% })%>
-    <% } %>
 </section>

@@ -1,8 +1,10 @@
 title: "Patrick Wu's Blog"
 subtitle: "" 
 description: "Nothing to see here"
-author: Patrick Wu, Jinming
-language: dual
+author: Patrick WU Jinming
+language:
+- en
+- zh
 timezone:
 
 url: https://patrickwu.space

@@ -1,22 +1,22 @@
-<h2>Navigation</h2>
+<h2><%= __('post.nav') %> </h2>
 
 <% if (page.prev || page.next){ %>
 <nav>
   <% if (page.prev){ %>
   <div>
-    <strong><%= __('Post.Next') %></strong>
+    <strong><%= __('post.next') %></strong>:
     <% var title = truncate(page.prev.title , {length:60}) %>
     <a class="post-nav-title" href="<%- url_for(page.prev.path) %>">
-      <%= title ||  __('Untitled') %>
+      <%= title ||  __('untitled') %>
     </a>
   </div>
   <% } %>
   <% if (page.next){ %>
   <div>
-      <strong><%= __('Post.Prev') %></strong> :
+      <strong><%= __('post.prev') %></strong>:
       <% var title = truncate(page.next.title, {length:60}) %>
       <a class="post-nav-title" href="<%- url_for(page.next.path) %>">
-        <%= title ||  __('Untitled') %>
+        <%= title ||  __('untitled') %>
       </a>
   </div>
   <% } %>

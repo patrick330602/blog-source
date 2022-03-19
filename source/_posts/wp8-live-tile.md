@@ -1,44 +1,45 @@
 ---
-title: 如何计划 Windows Phone 的磁贴更新
+title: 如何計劃 Windows Phone 的磁貼更新
 tags:
 - C#
 - WP8
 - WP8.1
 date: 2014-07-06 11:21:26
+lang: zh
 ---
 
-本主题介绍使用 [ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 更新应用程序磁贴的背景图像所需的步骤。[ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 也可以用于更新次要磁贴。[Windows Phone 的磁贴概述](http://msdn.microsoft.com/zh-cn/library/hh202948.aspx)包含磁贴属性以及可以用于更新磁贴的各种方法。
+本主題介紹使用 [ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 更新應用程式磁貼的背景影象所需的步驟。[ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 也可以用於更新次要磁貼。[Windows Phone 的磁貼概述](http://msdn.microsoft.com/zh-cn/library/hh202948.aspx)包含磁貼屬性以及可以用於更新磁貼的各種方法。
 
-> 磁贴正面的背景图像是唯一一个可以使用 ShellTileSchedule 进行更新的属性。
+> 磁貼正面的背景影象是唯一一個可以使用 ShellTileSchedule 進行更新的屬性。
 
-可以在 [Windows Phone 的代码示例](http://msdn.microsoft.com/zhcn/library/ff431744.aspx)中找到这个已完成的示例。
+可以在 [Windows Phone 的程式碼示例](http://msdn.microsoft.com/zhcn/library/ff431744.aspx)中找到這個已完成的示例。
 
 <!--more-->
-## 设置磁贴计划
+## 設定磁貼計劃
 
-[ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 允许您设置将更新磁贴的背景图像的一次性计划或定期计划。即使您的应用程序处于非活动状态，该计划仍然可以继续运行。ShellTileSchedule 还可以用于停止为您的应用程序运行的任何计划。每当应用程序由于计划失败而启动时，应用程序都应该存储其 ShellTileSchedule 设置并启动该计划，即使应用程序不再运行，也可以取消计划。
+[ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 允許您設定將更新磁貼的背景影象的一次性計劃或定期計劃。即使您的應用程式處於非活動狀態，該計劃仍然可以繼續執行。ShellTileSchedule 還可以用於停止為您的應用程式執行的任何計劃。每當應用程式由於計劃失敗而啟動時，應用程式都應該儲存其 ShellTileSchedule 設定並啟動該計劃，即使應用程式不再執行，也可以取消計劃。
 
-[ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 示例是一个具有四个按钮的简单程序。这四个按钮分别是：
+[ShellTileSchedule](http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 示例是一個具有四個按鈕的簡單程式。這四個按鈕分別是：
 
-1.  更新磁贴一次。
-2.  创建一个更新磁贴次数不确定的计划。
-3.  创建一个更新磁贴指定次数的计划。
-4.  停止正在运行的任何计划。
+1.  更新磁貼一次。
+2.  建立一個更新磁貼次數不確定的計劃。
+3.  建立一個更新磁貼指定次數的計劃。
+4.  停止正在執行的任何計劃。
 
 ![AP_Tiles_TileScheduleSample](https://cdn.patrickwu.space/posts/dev/wp/IC505451.jpg)
       
-> 请记住，将应用程序的应用程序磁贴固定到“开始”屏幕以便测试磁贴更新功能。
+> 請記住，將應用程式的應用程式磁貼固定到“開始”螢幕以便測試磁貼更新功能。
 
 
-## 创建应用程序 UI
+## 建立應用程式 UI
 
-1.  在 Visual Studio 2010 Express for Windows Phone 中，通过选择**“文件 | 新建项目”**菜单命令创建一个新项目。
-2.  将显示“新建项目”窗口。展开 Visual C# 模板，然后选择**“Silverlight for Windows Phone”**模板。
-3.  选择**“Windows Phone 应用程序”**模板。用您选择的名称填写“名称”。
-4.  单击**“确定”**。将显示“新建 Windows Phone 应用程序”窗口。
-5.  在**“Windows Phone OS 目标版本”**菜单中，确保**“Windows Phone OS 7.1”**处于选定状态。
-6.  单击**“确定”**。一个新项目便创建完成，并在 Visual Studio 设计器窗口中打开 MainPage.xaml。
-7.  在 MainPage.xaml 中，将名为 ContentPanel 的 Grid 替换为以下代码。该代码将为我们的 UI 创建四个按钮。
+1.  在 Visual Studio 2010 Express for Windows Phone 中，通過選擇**“檔案 | 新建項目”**選單命令建立一個新項目。
+2.  將顯示“新建項目”視窗。展開 Visual C# 模板，然後選擇**“Silverlight for Windows Phone”**模板。
+3.  選擇**“Windows Phone 應用程式”**模板。用您選擇的名稱填寫“名稱”。
+4.  單擊**“確定”**。將顯示“新建 Windows Phone 應用程式”視窗。
+5.  在**“Windows Phone OS 目標版本”**選單中，確保**“Windows Phone OS 7.1”**處於選定狀態。
+6.  單擊**“確定”**。一個新項目便建立完成，並在 Visual Studio 設計器視窗中開啟 MainPage.xaml。
+7.  在 MainPage.xaml 中，將名為 ContentPanel 的 Grid 替換為以下程式碼。該程式碼將為我們的 UI 建立四個按鈕。
 
 ```xml
 <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
@@ -49,16 +50,16 @@ date: 2014-07-06 11:21:26
 </Grid>
 ```
 
-### 创建磁贴计划
+### 建立磁貼計劃
 
 
-1.  向 MainPage.xaml.cs 文件的顶部添加一个 using 指令并提供包含 [ShellTileSchedule]( http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 的命名空间的名称。
+1.  向 MainPage.xaml.cs 檔案的頂部新增一個 using 指令並提供包含 [ShellTileSchedule]( http://msdn.microsoft.com/zh-cn/library/microsoft.phone.shell.shelltileschedule.aspx) 的名稱空間的名稱。
 
 ```csharp
  Microsoft.Phone.Shell;
 ```
 
-1.  声明并初始化用于计划和状态的变量。
+1.  聲明並初始化用於計劃和狀態的變數。
 
 
 ```csharp
@@ -67,7 +68,7 @@ date: 2014-07-06 11:21:26
     ShellTileSchedule SampleTileSchedule =  ShellTileSchedule();     TileScheduleRunning = ;
 ```
 
-1.  添加用于执行一次性更新的代码。
+1.  新增用於執行一次性更新的程式碼。
 
 ```csharp
   buttonOneTime_Click( sender, RoutedEventArgs e)
@@ -79,7 +80,7 @@ date: 2014-07-06 11:21:26
     TileScheduleRunning = ;
 }
 ```
-1.  添加用于设置运行次数不确定的计划的代码。请记住，如果该计划失败次数太多，将取消该计划。
+1.  新增用於設定執行次數不確定的計劃的程式碼。請記住，如果該計劃失敗次數太多，將取消該計劃。
 
 ```csharp
   buttonIndefinite_Click( sender, RoutedEventArgs e)
@@ -92,7 +93,7 @@ date: 2014-07-06 11:21:26
 }
 ```
 
-1.  添加用于设置某个计划的代码，该计划将更新磁贴无限次。同样，如果该计划失败次数太多，将取消该计划。
+1.  新增用於設定某個計劃的程式碼，該計劃將更新磁貼無限次。同樣，如果該計劃失敗次數太多，將取消該計劃。
 
 ```csharp
   buttonDefined_Click( sender, RoutedEventArgs e)
@@ -106,7 +107,7 @@ date: 2014-07-06 11:21:26
 }
 ```
 
-添加用于停止任何正在运行的计划的代码。请注意，我们如何通过首先启动计划来附加到该计划。
+新增用於停止任何正在執行的計劃的程式碼。請注意，我們如何通過首先啟動計劃來附加到該計劃。
 
 ```csharp
   buttonStop_Click( sender, RoutedEventArgs e)
@@ -120,22 +121,22 @@ date: 2014-07-06 11:21:26
 }
 ```
 
-调试更新计划可能具有挑战性。为了省电，对更新进行批处理，因此可能需要多达约一小时的时间才能看到更新后的图像。当设备锁定时将不会进行更新，因为用户将看不到更新。
+偵錯更新計劃可能具有挑戰性。為了省電，對更新進行批處理，因此可能需要多達約一小時的時間才能看到更新後的影象。當裝置鎖定時將不會進行更新，因為使用者將看不到更新。
 
-### 运行和调试应用程序的步骤
+### 執行和偵錯應用程式的步驟
 
 
 
-1.  通过选择**“调试 | 启动调试”**菜单命令运行应用程序。
-2.  当模拟器初始化并且您的程序正在运行时，按模拟器上的**“开始”**按键以进入“开始”屏幕。导航到应用程序列表并找到您的应用程序。长按应用程序名称，然后从上下文菜单中选择**“固定到‘开始'屏幕”**。应用程序磁贴便固定到“开始”屏幕。
-3.  按**“返回”**按键返回您的应用程序。按应用程序上的其中一个按钮启动某个计划。
-4.  返回“开始”屏幕。等待该计划运行，以查看结果。请记住，此过程可能需要一小段时间，因为需要对更新进行批处理。
+1.  通過選擇**“偵錯 | 啟動偵錯”**選單命令執行應用程式。
+2.  當模擬器初始化並且您的程式正在執行時，按模擬器上的**“開始”**按鍵以進入“開始”螢幕。導航到應用程式列表並找到您的應用程式。長按應用程式名稱，然後從上下文選單中選擇**“固定到‘開始'螢幕”**。應用程式磁貼便固定到“開始”螢幕。
+3.  按**“返回”**按鍵返回您的應用程式。按應用程式上的其中一個按鈕啟動某個計劃。
+4.  返回“開始”螢幕。等待該計劃執行，以檢視結果。請記住，此過程可能需要一小段時間，因為需要對更新進行批處理。
 
 ![AP_Tiles_TileScheduleResult](https://cdn.patrickwu.space/posts/dev/wp/IC505452.jpg)
 
-## 计划次要磁贴
+## 計劃次要磁貼
 
-尽管该示例没有次要磁贴，但您也可以通过向 ShellTileSchedule 构造函数传递磁贴信息来为次要磁贴设置计划。下面的示例演示了如何为每个现有磁贴设置计划。
+儘管該示例沒有次要磁貼，但您也可以通過向 ShellTileSchedule 建構函式傳遞磁貼資訊來為次要磁貼設定計劃。下面的示例演示瞭如何為每個現有磁貼設定計劃。
 
 ```csharp
  (ShellTile TileToSchedule  ShellTile.ActiveTiles)

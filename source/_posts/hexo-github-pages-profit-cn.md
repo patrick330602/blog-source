@@ -4,6 +4,7 @@ date: 2017-06-27 09:11:10
 tags:
 - Hexo
 - Web
+lang: zh
 ---
 
 ## 前言

@@ -1,13 +1,14 @@
 ---
-title: WP8摄像头API（硬件快门、自动对焦、实时修改捕获视频）
+title: WP8攝像頭API（硬體快門、自動對焦、實時修改捕獲視訊）
 date: 2014-07-21 07:38:22
 tags:
 - 'C#'
 - 'XAML'
 - WP8
+lang: zh
 ---
 
-## 1、演示如何响应硬件快门HardwareShutter.xaml
+## 1、演示如何響應硬體快門HardwareShutter.xaml
 
 ```xml
  <phone:PhoneApplicationPage
@@ -32,14 +33,14 @@ tags:
                  <Canvas.Background>
                      <VideoBrush x:Name="videoBrush">
                          <VideoBrush.RelativeTransform>
-                             <!--把捕获到的图像正过来-->
+                             <!--把捕獲到的影象正過來-->
                              <RotateTransform CenterX="0.5" CenterY="0.5" Angle="90" />
                          </VideoBrush.RelativeTransform>
                      </VideoBrush>
                  </Canvas.Background>
              </Canvas>
 
-             <TextBlock Name="lblMsg" Text="通过按硬件快门来查看演示效果（半按压、全按压、释放）" TextWrapping="Wrap" />
+             <TextBlock Name="lblMsg" Text="通過按硬體快門來檢視演示效果（半按壓、全按壓、釋放）" TextWrapping="Wrap" />
 
          </StackPanel>
      </Grid>
@@ -52,14 +53,14 @@ HardwareShutter.xaml.cs
 
 ```csharp
  /*
-  * 演示如何捕获相机的硬件快门的相关事件
+  * 演示如何捕獲相機的硬體快門的相關事件
   *
-  * CameraButtons.ShutterKeyHalfPressed - 硬件快门半按压时所触发的事件
-  * CameraButtons.ShutterKeyPressed - 硬件快门全按压时所触发的事件
-  * CameraButtons.ShutterKeyReleased - 硬件快门被释放时所触发的事件
+  * CameraButtons.ShutterKeyHalfPressed - 硬體快門半按壓時所觸發的事件
+  * CameraButtons.ShutterKeyPressed - 硬體快門全按壓時所觸發的事件
+  * CameraButtons.ShutterKeyReleased - 硬體快門被釋放時所觸發的事件
   *
   *
-  * 注：无论是拍照模式还是摄像模式，只有在摄像头工作起来的时候，系统才能响应硬件快门的相关事件
+  * 注：無論是拍照模式還是攝像模式，只有在攝像頭工作起來的時候，系統才能響應硬體快門的相關事件
   */
 
  using System;
@@ -95,19 +96,19 @@ HardwareShutter.xaml.cs
              {
                  _camera = new PhotoCamera(CameraType.Primary);
 
-                 // 注册硬件快门的相关事件
+                 // 註冊硬體快門的相關事件
                  CameraButtons.ShutterKeyHalfPressed += CameraButtons_ShutterKeyHalfPressed;
                  CameraButtons.ShutterKeyPressed += CameraButtons_ShutterKeyPressed;
                  CameraButtons.ShutterKeyReleased += CameraButtons_ShutterKeyReleased;
 
-                 // 相机模式下，必须将捕获到的信息输出到 UI 上，系统才能响应硬件快门的事件（同理，摄像模式下，必须调用了 CaptureSource.Start() 之后系统才能响应硬件快门的事件）
+                 // 相機模式下，必須將捕獲到的資訊輸出到 UI 上，系統才能響應硬體快門的事件（同理，攝像模式下，必須呼叫了 CaptureSource.Start() 之後系統才能響應硬體快門的事件）
                  videoBrush.SetSource(_camera);
              }
          }
 
          protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
          {
-             // 清理相关资源
+             // 清理相關資源
              CameraButtons.ShutterKeyHalfPressed -= CameraButtons_ShutterKeyHalfPressed;
              CameraButtons.ShutterKeyPressed -= CameraButtons_ShutterKeyPressed;
              CameraButtons.ShutterKeyReleased -= CameraButtons_ShutterKeyReleased;
@@ -115,23 +116,23 @@ HardwareShutter.xaml.cs
 
          void CameraButtons_ShutterKeyHalfPressed(object sender, EventArgs e)
          {
-             lblMsg.Text = "快门半按压";
+             lblMsg.Text = "快門半按壓";
          }
 
          void CameraButtons_ShutterKeyPressed(object sender, EventArgs e)
          {
-             lblMsg.Text = "快门全按压";
+             lblMsg.Text = "快門全按壓";
          }
 
          void CameraButtons_ShutterKeyReleased(object sender, EventArgs e)
          {
-             lblMsg.Text = "快门被释放";
+             lblMsg.Text = "快門被釋放";
          }
      }
  }
  ```
 
-## 2、演示如何自动对焦，以及如何自动对焦到指定的点
+## 2、演示如何自動對焦，以及如何自動對焦到指定的點
 
 Focus.xaml
 ```xml
@@ -157,14 +158,14 @@ Focus.xaml
                  <Canvas.Background>
                      <VideoBrush x:Name="videoBrush">
                          <VideoBrush.RelativeTransform>
-                             <!--把捕获到的图像正过来-->
+                             <!--把捕獲到的影象正過來-->
                              <RotateTransform CenterX="0.5" CenterY="0.5" Angle="90" />
                          </VideoBrush.RelativeTransform>
                      </VideoBrush>
                  </Canvas.Background>
              </Canvas>
 
-             <Button Name="btnFocus" Content="自动对焦" Click="btnFocus_Click" />
+             <Button Name="btnFocus" Content="自動對焦" Click="btnFocus_Click" />
 
              <TextBlock Name="lblMsg" />
 
@@ -178,18 +179,18 @@ Focus.xaml.cs
 
 ```csharp
  /*
-  * 演示如何自动对焦，以及如何自动对焦到指定的点
+  * 演示如何自動對焦，以及如何自動對焦到指定的點
   *
-  * PhotoCamera - 用于提供相机功能
-  *     Focus() - 让相机自动对焦
-  *     FocusAtPoint(double x, double y) - 自动对焦到取景器上指定的点
-  *         x, y - 取景器上需要对焦的点的坐标，取景器左上角坐标为 0,0，取景器右下角坐标为 1,1
-  *     AutoFocusCompleted - 自动对焦完成后所触发的事件（事件参数为 CameraOperationCompletedEventArgs 类型）
+  * PhotoCamera - 用於提供相機功能
+  *     Focus() - 讓相機自動對焦
+  *     FocusAtPoint(double x, double y) - 自動對焦到取景器上指定的點
+  *         x, y - 取景器上需要對焦的點的座標，取景器左上角座標為 0,0，取景器右下角座標為 1,1
+  *     AutoFocusCompleted - 自動對焦完成後所觸發的事件（事件參數為 CameraOperationCompletedEventArgs 類型）
   *
   *
   * CameraOperationCompletedEventArgs
   *     Succeeded - 操作是否成功
-  *     Exception - 异常信息
+  *     Exception - 異常資訊
   */
 
  using System;
@@ -223,18 +224,18 @@ Focus.xaml.cs
          {
              if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
              {
-                 // 实例化 PhotoCamera，注册相关事件
+                 // 例項化 PhotoCamera，註冊相關事件
                  _camera = new PhotoCamera(CameraType.Primary);
                  _camera.AutoFocusCompleted += _camera_AutoFocusCompleted;
 
-                 // 在 VideoBrush 上显示摄像头捕获到的实时信息
+                 // 在 VideoBrush 上顯示攝像頭捕獲到的實時資訊
                  videoBrush.SetSource(_camera);
              }
          }
 
          protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
          {
-             // 清理相关资源
+             // 清理相關資源
              _camera.AutoFocusCompleted -= _camera_AutoFocusCompleted;
          }
 
@@ -244,14 +245,14 @@ Focus.xaml.cs
              {
                  Deployment.Current.Dispatcher.BeginInvoke(delegate()
                  {
-                     lblMsg.Text = "自动对焦完成";
+                     lblMsg.Text = "自動對焦完成";
                  });
              }
              else
              {
                  Deployment.Current.Dispatcher.BeginInvoke(delegate()
                  {
-                     lblMsg.Text = "自动对焦失败";
+                     lblMsg.Text = "自動對焦失敗";
                  });
              }
          }
@@ -262,15 +263,15 @@ Focus.xaml.cs
              {
                  try
                  {
-                     // 开始自动对焦
+                     // 開始自動對焦
                      _camera.Focus();
-                     lblMsg.Text = "开始自动对焦";
+                     lblMsg.Text = "開始自動對焦";
                  }
                  catch (Exception ex)
                  {
                      this.Dispatcher.BeginInvoke(delegate()
                      {
-                         lblMsg.Text = "自动对焦失败：" + ex.ToString();
+                         lblMsg.Text = "自動對焦失敗：" + ex.ToString();
                      });
                  }
              }
@@ -278,7 +279,7 @@ Focus.xaml.cs
              {
       this.Dispatcher.BeginInvoke(delegate()
                  {
-                     lblMsg.Text = "相机不支持自动对焦";
+                     lblMsg.Text = "相機不支援自動對焦";
                  });
              }
          }
@@ -291,26 +292,26 @@ Focus.xaml.cs
                  {
                      try
                      {
-                         // 获取用户触摸的点相对于 canvas 的坐标
+                         // 獲取使用者觸控的點相對於 canvas 的座標
                          Point tapLocation = e.GetPosition(canvas);
 
-                         // 计算触摸点映射于取景器上的坐标（取景器左上角为0,0，右下角为1,1）
+                         // 計算觸控點對映於取景器上的座標（取景器左上角為0,0，右下角為1,1）
                          double focusXPercent = tapLocation.X / canvas.Width;
                          double focusYPercent = tapLocation.Y / canvas.Height;
 
-                         // 自动对焦到指定的点
+                         // 自動對焦到指定的點
                          _camera.FocusAtPoint(focusXPercent, focusYPercent);
 
                          this.Dispatcher.BeginInvoke(delegate()
                          {
-                             lblMsg.Text = String.Format("自动对焦到指定的点{0}X：{1:N2}{2}Y：{3:N2}", System.Environment.NewLine, focusXPercent, System.Environment.NewLine, focusYPercent);
+                             lblMsg.Text = String.Format("自動對焦到指定的點{0}X：{1:N2}{2}Y：{3:N2}", System.Environment.NewLine, focusXPercent, System.Environment.NewLine, focusYPercent);
                          });
                      }
                      catch (Exception ex)
                      {
                          this.Dispatcher.BeginInvoke(delegate()
                          {
-                             lblMsg.Text = "自动对焦到指定的点失败：" + ex.ToString();
+                             lblMsg.Text = "自動對焦到指定的點失敗：" + ex.ToString();
                          });
                      }
                  }
@@ -318,7 +319,7 @@ Focus.xaml.cs
                  {
                      this.Dispatcher.BeginInvoke(delegate()
                      {
-                         lblMsg.Text = "相机不支持自动对焦到指定的点";
+                         lblMsg.Text = "相機不支援自動對焦到指定的點";
                      });
                  }
              }
@@ -327,7 +328,7 @@ Focus.xaml.cs
  }
 ```
 
-## 3、演示如何实时修改捕获到的视频帧
+## 3、演示如何實時修改捕獲到的視訊幀
 
 LiveAlter.xaml
 ```xml
@@ -356,7 +357,7 @@ LiveAlter.xaml
                      </Canvas.Background>
                  </Canvas>
 
-                 <!--用于显示经过处理后的实时画面-->
+                 <!--用於顯示經過處理後的實時畫面-->
                  <Image x:Name="imgEffect" HorizontalAlignment="Left" />
              </Grid>
 
@@ -372,17 +373,17 @@ LiveAlter.xaml.cs
 
 ```csharp
  /*
-  * 演示如何实时处理摄像头捕获到的图像
+  * 演示如何實時處理攝像頭捕獲到的影象
   *
-  * PhotoCamera - 用于提供相机功能
-  *     PreviewResolution - 捕获到的图像的当前的分辨率（返回 System.Windows.Size 类型的结构体，其包含 Width 和 Height 字段）
-  *     GetPreviewBufferArgb32(int[] pixelData) - 将当前捕获到的图像的 ARGB 数据复制到指定的缓冲区中
+  * PhotoCamera - 用於提供相機功能
+  *     PreviewResolution - 捕獲到的影象的當前的解析度（返回 System.Windows.Size 類型的結構體，其包含 Width 和 Height 欄位）
+  *     GetPreviewBufferArgb32(int[] pixelData) - 將當前捕獲到的影象的 ARGB 資料複製到指定的緩衝區中
   *
   *
   * 注：
-  * Resolution 指的是相机设置的分辨率
-  * PreviewResolution 指的是系统针对显示设备缩放后的真实分辨率
-  * 因为通常相机能够拍摄大于设备显示器的分辨率的图像，所以实时显示摄像头捕获到的图像时，系统会对其分辨率进行优化，PreviewResolution 就是优化后的数据
+  * Resolution 指的是相機設定的解析度
+  * PreviewResolution 指的是系統針對顯示裝置縮放後的真實解析度
+  * 因為通常相機能夠拍攝大於裝置顯示器的解析度的影象，所以實時顯示攝像頭捕獲到的影象時，系統會對其解析度進行優化，PreviewResolution 就是優化後的資料
   */
 
  using System;
@@ -409,9 +410,9 @@ LiveAlter.xaml.cs
      {
          private PhotoCamera _camera = new PhotoCamera();
 
-         // 用于显示处理后的图像
+         // 用於顯示處理後的影象
          private WriteableBitmap _writeableBitmap;
-         // 有信号
+         // 有訊號
          private static ManualResetEvent _manualReset = new ManualResetEvent(true);
 
          public LiveAlter()
@@ -423,7 +424,7 @@ LiveAlter.xaml.cs
          {
              if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
              {
-                 // 实例化 PhotoCamera，并注册相关事件
+                 // 例項化 PhotoCamera，並註冊相關事件
                  _camera = new PhotoCamera(CameraType.Primary);
                  _camera.Initialized += _camera_Initialized;
 
@@ -433,14 +434,14 @@ LiveAlter.xaml.cs
              {
                  this.Dispatcher.BeginInvoke(delegate()
                  {
-                     lblMsg.Text = "设备不支持主摄像头";
+                     lblMsg.Text = "裝置不支援主攝像頭";
                  });
              }
          }
 
          protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
          {
-          // 清理资源
+          // 清理資源
              if (_camera != null)
              {
                  _camera.Dispose();
@@ -450,13 +451,13 @@ LiveAlter.xaml.cs
 
          void _camera_Initialized(object sender, CameraOperationCompletedEventArgs e)
          {
-             // 新开线程去执行实时处理图片的任务
+             // 新開執行緒去執行實時處理圖片的任務
              Thread thread = new Thread(CameraToGray);
              thread.Start();
 
              this.Dispatcher.BeginInvoke(delegate()
              {
-                 // 让 Image 显示 WriteableBitmap 中的内容
+                 // 讓 Image 顯示 WriteableBitmap 中的內容
                  _writeableBitmap = new WriteableBitmap((int)_camera.PreviewResolution.Width, (int)_camera.PreviewResolution.Height);
                  imgEffect.Source = _writeableBitmap;
              });
@@ -464,37 +465,37 @@ LiveAlter.xaml.cs
 
          private void CameraToGray()
          {
-             // 初始化缓冲区大小：图像宽和高的乘积
+             // 初始化緩衝區大小：影象寬和高的乘積
              int[] buffer = new int[(int)_camera.PreviewResolution.Width * (int)_camera.PreviewResolution.Height];
 
              try
              {
                  while (true)
                  {
-                     // 实例化 ManualResetEvent 的时候，指定了其是有信号的
-                     _manualReset.WaitOne(); // 有信号则不阻塞，无信号则阻塞
+                     // 例項化 ManualResetEvent 的時候，指定了其是有訊號的
+                     _manualReset.WaitOne(); // 有訊號則不阻塞，無訊號則阻塞
 
-                     // 将当前捕获到的图像以 ARGB 的方式写入到缓冲区
+                     // 將當前捕獲到的影象以 ARGB 的方式寫入到緩衝區
                      _camera.GetPreviewBufferArgb32(buffer);
 
-                     // 将缓冲区中的每一个像素的颜色都转换为灰色系
+                     // 將緩衝區中的每一個畫素的顏色都轉換為灰色系
                      for (int i = 0; i < buffer.Length; i++)
                      {
                          buffer[i] = ColorToGray(buffer[i]);
                      }
 
-                     _manualReset.Reset(); // 设置为无信号
+                     _manualReset.Reset(); // 設定為無訊號
 
                      Deployment.Current.Dispatcher.BeginInvoke(delegate()
                      {
-                         // 将处理后的图像数据保存到 WriteableBitmap 对象
+                         // 將處理後的影象資料儲存到 WriteableBitmap 物件
                          buffer.CopyTo(_writeableBitmap.Pixels, 0);
-                       // 重新绘制整个 WriteableBitmap 对象
+                       // 重新繪製整個 WriteableBitmap 物件
                          _writeableBitmap.Invalidate();
 
-                         lblMsg.Text = "图像实时处理中";
+                         lblMsg.Text = "影象實時處理中";
 
-                         _manualReset.Set();  // 设置为有信号
+                         _manualReset.Set();  // 設定為有訊號
                      });
                  }
 
@@ -503,12 +504,12 @@ LiveAlter.xaml.cs
              {
                  this.Dispatcher.BeginInvoke(delegate()
                  {
-                     lblMsg.Text = "图像处理失败：" + ex.ToString();
+                     lblMsg.Text = "影象處理失敗：" + ex.ToString();
                  });
             }
          }
 
-         // 将指定的颜色转换成灰色系的颜色
+         // 將指定的顏色轉換成灰色系的顏色
          private int ColorToGray(int color)
          {
              int gray = 0;

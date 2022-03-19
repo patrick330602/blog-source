@@ -5,20 +5,28 @@
     var title = titlecase(page.title);
 
     if (is_archive()){
-      title = __('Page.Archives');   
-    } else if (is_category()){
-      title = page.category;
+      title = __('common.archives');   
     } else if (is_tag()){
-      title = __('Page.Tags') + ': ' + page.tag;
+      title = __('common.tag') + ': ' + page.tag;
   }
   %>
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@patrick330602" />
-  <meta name="twitter:creator" content="@patrick330602" />
+  <meta name="twitter:site" content="@callmepkwu" />
+  <meta name="twitter:creator" content="@callmepkwu" />
   <meta property="og:url" content="<%= config.url + '/' + page.path %>" />
   <meta property="og:title" content="<% if (title){ %><%= title %> | <% } %><%= config.title %>" />
   <meta property="og:image" content="https://cdn.patrickwu.space/base/social.png" />
   <title><% if (title){ %>  <%= title %> | <% } %><%= config.title %> </title>
+
+  <% const languages = display_languages();
+const pageLanguage = page_language(page);
+if (languages.length > 1) {
+    languages.forEach((language) => {
+        if (language !== 'default' && pageLanguage !== language) { %>
+<link href="<%= url_for(i18n_path(!is_default_language(language) ? language : null)) %>" rel="alternate" hreflang="<%= rfc5646(language) %>" />
+    <% }
+    });
+} %>
 
  
   <% if (theme.favicon){ %>
@@ -63,6 +71,8 @@
   }());
   //]]>
   </script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 
   <%- js('honk.js') %>
   <%- css('style') %> 

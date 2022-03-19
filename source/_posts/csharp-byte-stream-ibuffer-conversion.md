@@ -4,6 +4,7 @@ title: Byte[],Stream,Ibuffer,IRandomAccessStream的互相轉換
 date: 2014/9/7 20:46:25
 tags:
 - C#
+lang: zh
 ---
 
 今天做8.1程序時徹底弄混了IRandomAcessStream和Stream。。。於是乎，我找了一個可用的不同類型轉換。。。。

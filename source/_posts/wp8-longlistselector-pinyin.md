@@ -1,16 +1,17 @@
 ---
-title: Windows Phone 8 LongListSelector按拼音首字母分组
+title: Windows Phone 8 LongListSelector按拼音首字母分組
 date: 2014/10/16 08:00:00
 tags:
 - C#
 - WP8
+lang: zh
 ---
 
-Windows Phone 8的LongListSelector控件按拼音分组主要有两种方法，一个是在数据源里手工指定拼音首字母字段，作为index，这种方法效率高但会造成数据冗余不宜维护。另一个就是我今天介绍的方法，来自MSDN，虽然官网例子是针对是英文数据的首字母分组，但其实稍微改一下还是是支持中文的。
+Windows Phone 8的LongListSelector控制項按拼音分組主要有兩種方法，一個是在資料來源裡手工指定拼音首字母欄位，作為index，這種方法效率高但會造成資料冗餘不宜維護。另一個就是我今天介紹的方法，來自MSDN，雖然官網例子是針對是英文資料的首字母分組，但其實稍微改一下還是是支援中文的。
 
  <!--more-->
 
-实现方法很简单。首先你需要一个来自MSDN的AlphaKeyGroup类，代码如下：
+實現方法很簡單。首先你需要一個來自MSDN的AlphaKeyGroup類，程式碼如下：
 
 
 ```csharp
@@ -26,7 +27,7 @@ public class AlphaKeyGroup<T> : List<T>{
     /// </summary>
     public string Key { get; private set; }
     /// <summary>
-    /// Public constructor.
+    /// Public function Object() { [native code] }.
     /// </summary>
     /// <param name="key">The key for this group.</param>
     public AlphaKeyGroup(string key)
@@ -81,25 +82,25 @@ public class AlphaKeyGroup<T> : List<T>{
     }}
 ```
 
-这个类里面主要的精髓就在于：
+這個類裡面主要的精髓就在於：
 
 ```csharp
 var slg = new SortedLocaleGrouping(ci);
 ```
 
-SortedLocaleGrouping可以根据传入的传入的CultureInfo返回经过排序的组标头。
+SortedLocaleGrouping可以根據傳入的傳入的CultureInfo返回經過排序的組標頭。
 
-要按照拼音首字母排序，我们只要传入中国大陆的CultureInfo就可以了，也就是zh-CN。在中文环境的Windows Phone系统上，当然也可以用当前UI线程的CultureInfo去获得
+要按照拼音首字母排序，我們只要傳入中國大陸的CultureInfo就可以了，也就是zh-CN。在中文環境的Windows Phone系統上，當然也可以用當前UI執行緒的CultureInfo去獲得
 System.Threading.Thread.CurrentThread.CurrentUICulture
 
-但是为了保证我们的拼音排序能在任何语言设置下都统一，我还是建议写死zh-CN在里面。
+但是為了保證我們的拼音排序能在任何語言設定下都統一，我還是建議寫死zh-CN在裡面。
 
-在我的应用里，我需要按地铁站点(Station类)的地铁站名首字母(Station.StationName)分组，所以我绑定的集合要用AlphaKeyGroup包一下：
+在我的應用裡，我需要按地鐵站點(Station類)的地鐵站名首字母(Station.StationName)分組，所以我繫結的集合要用AlphaKeyGroup包一下：
 
 ```csharp
 public ObservableCollection<AlphaKeyGroup<Station>> GroupedStations { ... }
 ```
-然后，在给这个集合赋值的地方写Group的具体逻辑：
+然後，在給這個集合賦值的地方寫Group的具體邏輯：
 
 ```csharp
 GroupedStations = AlphaKeyGroup<Station>.CreateGroups(
@@ -109,15 +110,15 @@ GroupedStations = AlphaKeyGroup<Station>.CreateGroups(
     true).ToObservableCollection();
 ```
 
-第一个参数AllStations是原始数据，一个普通的IEnumerable<Station>集合。
+第一個參數AllStations是原始資料，一個普通的IEnumerable<Station>集合。
 
-第二个参数是最重要的，按哪种Culture进行分组，一定要传入zh-CN，简体中文。
+第二個參數是最重要的，按哪種Culture進行分組，一定要傳入zh-CN，簡體中文。
 
-第三个参数是个lambda表达式，这个委托负责分组字段的具体逻辑，在这里我们要按Station.StationName的第一个字的拼音首字母排序，所以需要取Substring(0,1)，返回Station.StationName的第一个字，之后SortedLocaleGrouping就可以自动进行拼音首字母分组了。
+第三個參數是個lambda表示式，這個委託負責分組欄位的具體邏輯，在這裡我們要按Station.StationName的第一個字的拼音首字母排序，所以需要取Substring(0,1)，返回Station.StationName的第一個字，之後SortedLocaleGrouping就可以自動進行拼音首字母分組了。
 
-第四个参数表示经过分组的排序结果需不需要排序，true表示需要排序，这也是我们通常的需求。
+第四個參數列示經過分組的排序結果需不需要排序，true表示需要排序，這也是我們通常的需求。
 
-至此，后端代码的工作就全部搞定了。前台xaml上的数据绑定还是和普通的LongListSelector没啥区别。
+至此，後端程式碼的工作就全部搞定了。前臺xaml上的資料繫結還是和普通的LongListSelector沒啥區別。
 
 XAML:
 
@@ -150,7 +151,7 @@ XAML:
     </phone:LongListSelector.GroupHeaderTemplate>
 ```
 
-App.xaml里的Style:
+App.xaml裡的Style:
 
 ```xml
 <Style x:Key="StationListJumpListStyle" TargetType="phone:LongListSelector">
@@ -167,4 +168,4 @@ App.xaml里的Style:
         </Setter.Value>
     </Setter></Style>
 ```
-转自：http://diaosbook.com/Post/2014/2/22/longlistselector-group-by-py-wp8
+轉自：http://diaosbook.com/Post/2014/2/22/longlistselector-group-by-py-wp8

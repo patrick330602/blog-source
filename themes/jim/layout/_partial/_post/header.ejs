@@ -1,12 +1,12 @@
 <div>
 
-	<h1><%= page.title|| __('Untitled') %></h1>
+	<h1><%= page.title|| __('untitled') %></h1>
 
 	---<br />
-	date: <%= date(page.date,  "MMM DD, YYYY") %><br />
+	<%= __('post.date') %>: <%= date(page.date,  "MMM DD, YYYY") %><br />
 
 	<% if( page.tags &&  page.tags.length > 0 ) {%>
-	tags:<br />
+		<%= __('post.tags') %>:<br />
 	-
 	<%- list_tags( page.tags ,{
 			  show_count:false,

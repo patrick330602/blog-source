@@ -1,77 +1,78 @@
 ---
-title: "在Windows10上安装Linux桌面环境(更新)"
+title: "在Windows10上安裝Linux桌面環境(更新)"
 date: 2016-08-23 21:38:08
 tags:
 - WSL
+lang: zh
 ---
-> 从BashOnWindows GitHub网站上的[文章](https://github.com/Microsoft/BashOnWindows/issues/637) 进行整理和翻译。
+> 從BashOnWindows GitHub網站上的[文章](https://github.com/Microsoft/BashOnWindows/issues/637) 進行整理和翻譯。
 
-我前面写了一遍如何利用X server, CCSM, Compiz和其他组件，与Bash On Ubuntu On Windows相互配合在Windows 10上直接运行Linux桌面环境。最近，我改进了其中的步骤，所以再发了一篇。
+我前面寫了一遍如何利用X server, CCSM, Compiz和其他元件，與Bash On Ubuntu On Windows相互配合在Windows 10上直接執行Linux桌面環境。最近，我改進了其中的步驟，所以再發了一篇。
 
-> 除非你是Linux发烧友，不建议使用此Linux桌面环境，因为质量和效果不是很好。推荐使用更轻量的i3wm和[openbox](https://patrickwu.space/2017/03/openbox-tint2-windows10/).
+> 除非你是Linux發燒友，不建議使用此Linux桌面環境，因為質量和效果不是很好。推薦使用更輕量的i3wm和[openbox](https://patrickwu.space/2017/03/openbox-tint2-windows10/).
 
 ## 首先....
 
-在Bash On Windows运行以下代码:
+在Bash On Windows執行以下程式碼:
 
 ```sh
 echo "export DISPLAY=:0.0" >> ~/.bashrc
 ```
 
-以Root用户运行以下代码:
+以Root使用者執行以下程式碼:
 
 ```sh
 sudo sed -i 's$<listen>.*</listen>$<listen>tcp:host=localhost,port=0</listen>$' /etc/dbus-1/session.conf
 ```
 
-> 一定要以root运行，否则会没有效果
+> 一定要以root執行，否則會沒有效果
 
-## Unity桌面环境
+## Unity桌面環境
 
-1. 安装VcXsrv并打开**XLaunch**。 选择 "One large window" 并在**display number** 输入0，如图：
+1. 安裝VcXsrv並開啟**XLaunch**。 選擇 "One large window" 並在**display number** 輸入0，如圖：
 
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/1.png)
    一路next下去就行，直到他完成配置
 
-2. 打开Bash On Windows并安装 **ubuntu-desktop**，**unity** 和 **ccsm**：
+2. 開啟Bash On Windows並安裝 **ubuntu-desktop**，**unity** 和 **ccsm**：
 
    ```shell
    sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager
    ```
 
-   输出显示：
+   輸出顯示：
 
    ```shell
    export DISPLAY=localhost:0
    ```
 
-   并打开**ccsm**。
+   並開啟**ccsm**。
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/2.png)
 
-3. **ccsm**中可能显示不出鼠标指针，因为没有加载玩所有内容。如图选择插件。
+3. **ccsm**中可能顯示不出滑鼠指針，因為沒有載入玩所有內容。如圖選擇外掛。
 
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/3.png)
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/4.png)
 
-4. 现在关闭ccsm并打开 **compiz**. 
+4. 現在關閉ccsm並開啟 **compiz**. 
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/5.png)
-    Compiz会花些时间载入，稍稍等待下桌面环境就会出现
+    Compiz會花些時間載入，稍稍等待下桌面環境就會出現
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/6.png)
 
-5. 关闭桌面环境的方法只能是关闭bash窗口，或者杀Compiz进程。
+5. 關閉桌面環境的方法只能是關閉bash視窗，或者殺Compiz程序。
 
-## XFCE桌面环境
+## XFCE桌面環境
 
-1. 安装VcXsrv并打开**XLaunch**。 选择 "One large window" 并在**display number** 输入0，如图：
+1. 安裝VcXsrv並開啟**XLaunch**。 選擇 "One large window" 並在**display number** 輸入0，如圖：
 
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/1.png)
    一路next下去就行，直到他完成配置
 
-2. 安装xorg和xubuntu:
+2. 安裝xorg和xubuntu:
    ```sh
    sudo apt-get install xorg xubuntu-desktop
    ```
 
-   此步骤会花上一些时间。
+   此步驟會花上一些時間。
 
-3. 完成后输入 `xfce4-session` 运行Xfce.
+3. 完成後輸入 `xfce4-session` 執行Xfce.

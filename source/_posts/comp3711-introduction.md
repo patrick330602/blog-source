@@ -3,6 +3,7 @@ title: 無處不在的算法——算法的設計及應用（COMP3711）
 date: 2017-10-30 12:40:47
 tags:
 - Thesis
+lang: zh
 ---
 
 

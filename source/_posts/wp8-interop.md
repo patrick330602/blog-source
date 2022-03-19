@@ -1,15 +1,16 @@
 ---
-title: 完美解锁WP8手机方法
+title: 完美解鎖WP8手機方法
 date: 2014-12-31 21:38:11
 tags:
 - WP8
 - WP8.1
 - Interop
+lang: zh
 ---
-# 需要环境
+# 需要環境
 
-- 带sd卡且开发者解锁的wp8手机
-- 带有部署的windows电脑
+- 帶sd卡且開發者解鎖的wp8手機
+- 帶有部署的windows電腦
 
 # 需要工具
 
@@ -19,20 +20,20 @@ tags:
 - Metro Commander
 - WPsystem Folder Unlocker(需部署)
 <!--more-->
-# 步骤
+# 步驟
 
-1. 安装所有程序与手机内存之中，然后用储存感知移动Preview For Developers和CustomPFD到SD卡中，所有程序都暂时不要打开
-2. 运行WPSystem Folder Unlocker，点击Unlock WPSystem Folder(SD Card)
-3. 用Pocket File Manager打开`SD Card\WPSystem`,将apps文件夹（也可能叫Apps）改名为Appx
-4. 然后进入appx文件夹，删除Preview for developers应用文件夹`{178ac8a1-6519-4a0b-960c-038393741e96}`里面的所有文件
+1. 安裝所有程式與手機記憶體之中，然後用儲存感知移動Preview For Developers和CustomPFD到SD卡中，所有程式都暫時不要開啟
+2. 執行WPSystem Folder Unlocker，點選Unlock WPSystem Folder(SD Card)
+3. 用Pocket File Manager開啟`SD Card\WPSystem`,將apps資料夾（也可能叫Apps）改名為Appx
+4. 然後進入appx資料夾，刪除Preview for developers應用資料夾`{178ac8a1-6519-4a0b-960c-038393741e96}`裡面的所有檔案
 5. 把名字改回去（Apps或apps）
-6. 打开Metro Commander,左边界面移到`WPSystem\apps\{27d6a090-50d2-4337-88cb-41d97597757a}`文件夹（CutomPFD的文件夹），右边界面移到`WPSystem\apps\{178ac8a1-6519-4a0b-960c-038393741e96}`文件夹（Preview for developer的文件夹）
-7. 激活左边窗口，点击SELECT ALL，然后点击COPY，然后他就会把CutomPFD的程序内容全部拷到Preview For Developers的根目录之下
-8. 完毕！现在运行Preview For Developers便是注册表编辑器咯！
+6. 開啟Metro Commander,左邊介面移到`WPSystem\apps\{27d6a090-50d2-4337-88cb-41d97597757a}`資料夾（CutomPFD的資料夾），右邊介面移到`WPSystem\apps\{178ac8a1-6519-4a0b-960c-038393741e96}`資料夾（Preview for developer的資料夾）
+7. 啟用左邊視窗，點選SELECT ALL，然後點選COPY，然後他就會把CutomPFD的程式內容全部拷到Preview For Developers的根目錄之下
+8. 完畢！現在執行Preview For Developers便是登錄檔編輯器咯！
 
 # 原理
 
-因为Preview For Developers是在市场中极少见的拥有读取WP8注册表权限的应用程序，直接覆盖他的源码会很方便的拥有和这个应用相同的权利
+因為Preview For Developers是在市場中極少見的擁有讀取WP8登錄檔許可權的應用程式，直接覆蓋他的源碼會很方便的擁有和這個應用相同的權利
 
 # 部署包
-http://pan.baidu.com/s/1pJmdU7x 密码：bmep
+http://pan.baidu.com/s/1pJmdU7x 密碼：bmep

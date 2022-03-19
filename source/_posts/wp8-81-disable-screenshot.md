@@ -1,16 +1,17 @@
 ---
-title: Windows Phone 8 APP中禁用截图
+title: Windows Phone 8 APP中禁用截圖
 tags:
 - C#
 - WP8
 - WP8.1
 date: 2014-10-15 22:39:45
+lang: zh
 ---
 
-Windows Phone 8 有系统自带的截图功能，快捷键：电源键+Win键，可以随意截图。
+Windows Phone 8 有系統自帶的截圖功能，快捷鍵：電源鍵+Win鍵，可以隨意截圖。
 
-Windows Phone 更新GDR2后新增了一个隐藏功能，允许APP禁用截图功能。
-`PhoneApplicationPage.IsScreenCaptureEnabled`这个隐藏的属性需要通过反射来访问和修改状态。
+Windows Phone 更新GDR2後新增了一個隱藏功能，允許APP禁用截圖功能。
+`PhoneApplicationPage.IsScreenCaptureEnabled`這個隱藏的屬性需要通過反射來訪問和修改狀態。
 <!--more-->
 ```csharp
 public static class PhoneApplicationPageExtensionMethods
@@ -40,11 +41,11 @@ public static class PhoneApplicationPageExtensionMethods
     }
 }
 ```
-调用`CanSetScreenCaptureEnabled()`方法检测Windows Phone版本是否符合要求（version 8.0.10322以上）。符合条件，然后就通过扩展方法`GetScreenCaptureEnabled()`和`SetScreenCaptureEnabled()`来修改`PhoneApplicationPage.IsScreenCaptureEnabled`属性。
+呼叫`CanSetScreenCaptureEnabled()`方法檢測Windows Phone版本是否符合要求（version 8.0.10322以上）。符合條件，然後就通過擴充套件方法`GetScreenCaptureEnabled()`和`SetScreenCaptureEnabled()`來修改`PhoneApplicationPage.IsScreenCaptureEnabled`屬性。
 使用：
 
 ```csharp
-// 构造函数
+// 建構函式
 public MainPage()
 {
     InitializeComponent();

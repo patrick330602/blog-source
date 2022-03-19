@@ -1,19 +1,19 @@
-<h2>Paginator</h2>
+<h2><%= __('paginator.title') %></h2>
 
 <% if (page.total > 1){ %>
-You are at: <strong></strong>Page <%= page.current %></strong>.
+<%- render(_p('paginator.location', page.current), 'ejs') %>
 <br />
 <% if (page.prev) { %>
-<a href="<%- url_for(page.prev_link) %>">Previous Page</a>
+<a href="<%- url_for(page.prev_link) %>"><%= __('paginator.prev') %></a>
 <% } else {%>
-Previous Page
+    <%= __('paginator.prev') %>
 <% } %>
 　<br />
 <% if (page.next) { %>
-<a href="<%- url_for(page.next_link) %>">Next Page</a>
+<a href="<%- url_for(page.next_link) %>"><%= __('paginator.next') %></a>
 <% } else {%>
-Next Page
+    <%= __('paginator.next') %>
 <% } %>
 <% } else { %>
-<p>There is only one page, so no paginator ¯\_(ツ)_/¯</p>
+<p><%= __('paginator.onepage') %></p>
 <% } %>

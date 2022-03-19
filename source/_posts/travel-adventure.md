@@ -3,6 +3,7 @@ title: 旅游·冒险
 date: 2018-06-11 10:14:04
 tags:
 - "Write-ups"
+lang: zh
 ---
 
 {% blockquote 海倫·凱勒 %}

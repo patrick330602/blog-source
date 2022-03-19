@@ -3,7 +3,7 @@
 	<h1><%= page.title|| __('Untitled') %></h1>
 
 	---<br />
-	date: <%= date(page.date,  "MMM DD, YYYY") %><br/>
+	<%= __('page.date') %>: <%= format_date_full(page.date) %><br/>
 	---
 </div>
 

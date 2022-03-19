@@ -1,11 +1,11 @@
 <section>
 
-    <h1>Archives</h1>
+    <h1><%= __('common.archives') %> </h1>
    
     <% page.posts.each(function (post) { %>
         <div>
-          <time><b><%= date(post.date,  "YYYY MMM Do") %></b></time> - 
-          <a  href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
+          <time><b><%= format_date_full(post.date) %></b></time> - 
+          <a  href="<%- url_for(post.path) %>"><%= post.title || __('untitled')%></a>
         </div>
 
     <% }) %>

@@ -1,62 +1,63 @@
 ---
-title: 在Windows 10下启用Ubuntu桌面环境
+title: 在Windows 10下啟用Ubuntu桌面環境
 date: 2016-07-13 21:19:02
 tags:
 - WSL
+lang: zh
 ---
 
-> 从BashOnWindows GitHub网站上的[文章](https://github.com/Microsoft/BashOnWindows/issues/637) 进行整理和翻译。
+> 從BashOnWindows GitHub網站上的[文章](https://github.com/Microsoft/BashOnWindows/issues/637) 進行整理和翻譯。
 
-现在，只要你利用X server, CCSM, Compiz和其他组件，与Bash On Ubuntu On Windows相互配合，你现在可以在Windows 10上直接运行Linux桌面环境.
+現在，只要你利用X server, CCSM, Compiz和其他元件，與Bash On Ubuntu On Windows相互配合，你現在可以在Windows 10上直接執行Linux桌面環境.
 
-> 除非你是Linux发烧友，不建议使用此Linux桌面环境。
+> 除非你是Linux發燒友，不建議使用此Linux桌面環境。
 
-## Unity桌面环境
+## Unity桌面環境
 
-1. 在 Bash On Windows运行以下代码:
+1. 在 Bash On Windows執行以下程式碼:
 
    ```sh
    echo "export DISPLAY=:0.0" >> ~/.bashrc
    sudo sed -i 's$<listen>.*</listen>$<listen>tcp:host=localhost,port=0</listen>$' /etc/dbus-1/session.conf
    ```
 
-2. 安装VcXsrv并打开**XLaunch**。 选择 "One large window" 并在**display number** 输入0，如图：
+2. 安裝VcXsrv並開啟**XLaunch**。 選擇 "One large window" 並在**display number** 輸入0，如圖：
 
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/1.png)
    一路next下去就行，直到他完成配置
 
-3. 打开Bash On Windows并安装 **ubuntu-desktop**，**unity** 和 **ccsm**：
+3. 開啟Bash On Windows並安裝 **ubuntu-desktop**，**unity** 和 **ccsm**：
 
    ```shell
    sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager
    ```
 
-   输出显示：
+   輸出顯示：
 
    ```shell
    export DISPLAY=localhost:0
    ```
 
-   并打开**ccsm**。
+   並開啟**ccsm**。
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/2.png)
 
-4. **ccsm**中可能显示不出鼠标指针，因为没有加载玩所有内容。如图选择插件。
+4. **ccsm**中可能顯示不出滑鼠指針，因為沒有載入玩所有內容。如圖選擇外掛。
 
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/3.png)
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/4.png)
 
-5. 现在关闭ccsm并打开 **compiz**. 
+5. 現在關閉ccsm並開啟 **compiz**. 
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/5.png)
-    Compiz会花些时间载入，稍稍等待下桌面环境就会出现
+    Compiz會花些時間載入，稍稍等待下桌面環境就會出現
    ![](https://cdn.patrickwu.space/posts/dev/wsl/lde-on-win10/6.png)
 
-6. 关闭桌面环境的方法只能是关闭bash窗口，或者杀Compiz进程。
+6. 關閉桌面環境的方法只能是關閉bash視窗，或者殺Compiz程序。
 
-## XFCE桌面环境
+## XFCE桌面環境
 
-1. 使用与Unity同样的方法配置VcXsrv。（1-4步）
-2. 安装**xfce4-session**：
+1. 使用與Unity同樣的方法配置VcXsrv。（1-4步）
+2. 安裝**xfce4-session**：
    ```shell
     sudo apt-get install xfce4-session
    ```
-   并运行**xfce4-session**.
+   並執行**xfce4-session**.

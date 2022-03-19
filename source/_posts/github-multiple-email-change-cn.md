@@ -4,6 +4,7 @@ date: 2016-07-13 11:08:56
 tags:
 - GitHub
 - Shell
+lang: zh
 ---
 最近，我在編寫一款掛載在GitHub的程序，但我突然發現我的Git狀態好像不太對。。。
 <!--more-->

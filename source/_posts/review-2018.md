@@ -3,6 +3,7 @@ title: 向後2018，向前2019
 date: 2018-12-28 14:56:53
 tags:
 - Annual Review
+lang: zh
 ---
 ## 幹了些啥？
 

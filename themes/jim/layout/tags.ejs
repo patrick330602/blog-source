@@ -1,0 +1,8 @@
+<section>
+        <h1 style="margin: 20px 0 20px;"><%= __('common.tags') %> </h1>
+        <% (page._tags || page.tags).forEach(tag => {%>
+        <span class="hometag">
+            <a style="text-decoration: none;" href="<%- url_for(tag.path) %>"><%- tag.name %> - <%- tag.length %></a>
+        </span>
+        <% })%>
+</section>

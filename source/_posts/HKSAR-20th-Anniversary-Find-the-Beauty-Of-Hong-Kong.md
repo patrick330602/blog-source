@@ -4,7 +4,6 @@ date: 2017-06-28 22:39:54
 tags:
 - MSSS
 - REDBird
-comments: false
 ---
 ![](https://cdn.patrickwu.space/posts/exp/hk.jpg)
 In Order to celebrate HKSAR 20th anniversary, we held a photo competition at May. Now, the final booklet is out! Download and check it out!

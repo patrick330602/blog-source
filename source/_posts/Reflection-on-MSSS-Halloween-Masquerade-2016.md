@@ -1,5 +1,5 @@
 ---
-title: Reflection on MSSS Halloween Masquerade 2016·MSSS假面舞會2016活動檢討檢討
+title: Reflection on MSSS Halloween Masquerade 2016
 date: 2016-12-30 21:45:11
 tags:
 - MSSS
