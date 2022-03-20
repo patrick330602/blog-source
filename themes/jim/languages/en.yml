@@ -6,11 +6,18 @@ common:
   home: Main
   sitemap: Sitemap
   archives: Archives
+  rss: RSS
   posts: Posts
   tag: Tag
   tags: Tags
   more: More this way!
   about: About Me
+
+home:
+  social: 'Find me on:'
+  talks: 'I got talks and panels like:'
+  friends: 'Also, here are my friends:'
+  
 
 lang_disabled: Change of language for the page is disabled for the limitation of the generator.
 

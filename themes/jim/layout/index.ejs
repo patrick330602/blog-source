@@ -24,7 +24,7 @@
 
 	<div>
 		<input id="toggle-list-1" class="toggle" type="checkbox">
-		<label for="toggle-list-1" class="fancy-toggle-1">Find me on:</label>
+		<label for="toggle-list-1" class="fancy-toggle-1"><%= __('home.social') %></label>
 		<div class="list">
 			<p>
 				<ul>
@@ -38,25 +38,20 @@
 	</div>
 	<div>
 		<input id="toggle-list-2" class="toggle" type="checkbox">
-		<label for="toggle-list-2" class="fancy-toggle-2">I got talks and panels like:</label>
+		<label for="toggle-list-2" class="fancy-toggle-2"><%= __('home.talks') %></label>
 		<div class="list">
 			<p>
 				<ul>
-					<li><a href="https://youtu.be/FX4FKxKJl74">WSL For DevOps and Cross-Platform Development</a>
-						(<a href="https://github.com/whitewaterfoundry/build2019">Resources</a>) @ <b>Microsoft Build 2019</b> with
-						Hayden Barnes</li>
-					<li><a href="https://youtu.be/2ur-VA2FuZg">Scripting with WSL Interoperability: Tips &
-						Tricks</a> (<a href="/wslconf">Resources</a>) @ <b>WSLConf 2020</b>.</li>
-					<li><a href="https://youtu.be/6KlAYAyihe8">WSL Panel on WSL Utilities, Kernel, Ubuntu news and Windows Integration</a> Hosted by <b><a href="https://www.youtube.com/channel/UC3FS96NUdoR3DwkaDwiLdRw">AzureTar</a></b></li>
-					<li><a href="https://youtu.be/NcM5zBmCrZA">WSL Series 2 - Advanced WSL2</a> @ <b><a href="https://www.youtube.com/playlist?list=PL5uLNcv9SibDJNEJBu8N8VhV-QkE6ZFQQ">WSL Days</a></b></li>
-					<li><a href="https://youtu.be/ieqCropntu4">Developing on Ubuntu with WSL Interoperability: Tips and Tricks</a> @ <b>Ubucon Asia 2021</b></li>
+					<% for (var t in site.data.talks) { %>
+						<li><%- render(site.data.talks[t], 'ejs') %></li>
+						<% } %>
 				</ul>
 			</p>
 		</div>
 	</div>
 	<div>
 		<input id="toggle-list-3" class="toggle" type="checkbox">
-		<label for="toggle-list-3" class="fancy-toggle-1">Also, here are my friends:</label>
+		<label for="toggle-list-3" class="fancy-toggle-3"><%= __('home.friends') %></label>
 		<div class="list">
 			<p>
 				<ul>

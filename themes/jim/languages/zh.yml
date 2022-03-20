@@ -6,11 +6,17 @@ common:
   home: 首頁
   sitemap: 站點地圖
   archives: 存檔
+  rss: RSS
   posts: 文章
   tag: 標籤
   tags: 標籤
   more: 查看更多文章！
   about: 關於我
+
+home:
+  social: '這些地方可以找到我：'
+  talks: '我的一些報告們：'
+  friends: '我的朋友們：'
 
 lang_disabled: 因為生成器的限制，無法在此介面選擇語言。
 
