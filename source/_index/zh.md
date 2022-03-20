@@ -1,3 +1,3 @@
 以[香港科技大學計算機科學專業工程學士](https://www.cse.ust.hk/)以及[香港中文大學計算機科學理學碩士](http://msc.cse.cuhk.edu.hk)畢業，現在是以 [WSL Utilities](https://wslutiliti.es) 的主要開發者和以 [WE. Studio](https://github.com/wedotstudio) 名義進行 UWP 開發的開發者活躍中。 曾於 [Canonical](https://canonical.com) 進行了 [Ubuntu for WSL](https://ubuntu.com/wsl) 的開發並於 [Whitewater Foundry](https://whitewaterfoundry.com) 協助進行 Pengwin 的開發。 目前已停止活動的社團 [WPerfect](https://wp8bartemp.wordpress.com/) 的創始人。 本人 PDF 格式的 CV 可在[此](https://cdn.patrickwu.space/base/cv.pdf)獲取。
 
-你可以通過 [GitHub Sponsors](https://github.com/sponsors/patrick330602)，[PayPal](https://www.paypal.me/callmepk/), 或者 [Buy Me a Coffee](https://www.buymeacoffee.com/callmepk) 來支援我。或者在 [Redbubble](https://callmepk.redbubble.com) 購置一些我的作品。
+你可以通過 [GitHub Sponsors](https://github.com/sponsors/patrick330602)，[PayPal](https://www.paypal.me/callmepk/)， 或者 [Buy Me a Coffee](https://www.buymeacoffee.com/callmepk) 來支援我。或者在 [Redbubble](https://callmepk.redbubble.com) 購置一些我的作品。
