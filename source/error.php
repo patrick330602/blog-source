@@ -15,17 +15,17 @@
             font-weight: bold;
         }
         a:link {
-            color: azure;
+            color: black;
         }
         a:hover {
             text-decoration: underline;
-            color: azure;
+            color: black;
         }
         a:active {
-            color: azure;
+            color: black;
         }
         a:visited {
-            color: aliceblue;
+            color: black;
         }
     </style>
     <title>Error <?= http_response_code() ?></title>
