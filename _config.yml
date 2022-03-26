@@ -97,10 +97,3 @@ colorblock:
   width: 10
   height: 10
   text: false
-
-deploy:
-#  type: shell
-#  command: scp -r public patmain:~/
-  type: git
-  repo: "git@github.com:patrick330602/patrick330602.github.io.git"
-  branch: master
