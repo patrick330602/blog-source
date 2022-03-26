@@ -36,4 +36,5 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           source: "public/*"
           target: "/var/www/posts/"
+          overwrite: true
           strip_components: 1

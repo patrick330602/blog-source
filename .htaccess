@@ -1,0 +1,42 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+ErrorDocument 400 https://api.patrickwu.space/error.php
+ErrorDocument 401 https://api.patrickwu.space/error.php
+ErrorDocument 402 https://api.patrickwu.space/error.php
+ErrorDocument 403 https://api.patrickwu.space/error.php
+ErrorDocument 404 https://api.patrickwu.space/error.php
+ErrorDocument 405 https://api.patrickwu.space/error.php
+ErrorDocument 406 https://api.patrickwu.space/error.php
+ErrorDocument 407 https://api.patrickwu.space/error.php
+ErrorDocument 408 https://api.patrickwu.space/error.php
+ErrorDocument 409 https://api.patrickwu.space/error.php
+ErrorDocument 410 https://api.patrickwu.space/error.php
+ErrorDocument 411 https://api.patrickwu.space/error.php
+ErrorDocument 412 https://api.patrickwu.space/error.php
+ErrorDocument 413 https://api.patrickwu.space/error.php
+ErrorDocument 414 https://api.patrickwu.space/error.php
+ErrorDocument 415 https://api.patrickwu.space/error.php
+ErrorDocument 416 https://api.patrickwu.space/error.php
+ErrorDocument 417 https://api.patrickwu.space/error.php
+ErrorDocument 422 https://api.patrickwu.space/error.php
+ErrorDocument 423 https://api.patrickwu.space/error.php
+ErrorDocument 424 https://api.patrickwu.space/error.php
+ErrorDocument 426 https://api.patrickwu.space/error.php
+ErrorDocument 428 https://api.patrickwu.space/error.php
+ErrorDocument 429 https://api.patrickwu.space/error.php
+ErrorDocument 431 https://api.patrickwu.space/error.php
+ErrorDocument 451 https://api.patrickwu.space/error.php
+ErrorDocument 500 https://api.patrickwu.space/error.php
+ErrorDocument 501 https://api.patrickwu.space/error.php
+ErrorDocument 502 https://api.patrickwu.space/error.php
+ErrorDocument 503 https://api.patrickwu.space/error.php
+ErrorDocument 504 https://api.patrickwu.space/error.php
+ErrorDocument 505 https://api.patrickwu.space/error.php
+ErrorDocument 506 https://api.patrickwu.space/error.php
+ErrorDocument 507 https://api.patrickwu.space/error.php
+ErrorDocument 508 https://api.patrickwu.space/error.php
+ErrorDocument 510 https://api.patrickwu.space/error.php
+ErrorDocument 511 https://api.patrickwu.space/error.php
