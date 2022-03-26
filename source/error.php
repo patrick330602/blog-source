@@ -89,51 +89,13 @@
             display: block;
         }
     </style>
-    <title>Umm.... You are lost.</title>
+    <title>Error <?= http_response_code() ?></title>
 </head>
 
 <body>
-    <div id="bg">
-        <div id="cover"></div>
-    </div>
-    <div id="content">
-        <div id="fof">
-            404.
-            
-        </div>
-    <div id="fog">
-        Umm.... You are lost.
-    </div>
-        <div id="parent">
-            Do you mean...
-            <div id='child'>
-                <pre>
-404.0 - Not found. 
-404.1 - Site Not Found. 
-404.2 - ISAPI or CGI restriction. 
-404.3 - MIME type restriction. 
-404.4 - No handlerconfigured. 
-404.5 - Denied by request filtering configuration. 
-404.6 - Verb denied. 
-404.7 - File extension denied. 
-404.8 - Hidden namespace. 
-404.9 - File attribute hidden. 
-404.10 - Request header too long. 
-404.11 - Request contains double escape sequence. 
-404.12 - Request contains high-bit characters. 
-404.13 - Content length too large. 
-404.14 - Request URL too long. 
-404.15 - Query string too long. 
-404.16 - DAV request sent to the static file handler. 
-404.17 - Dynamic content mapped to the static file handler via a wildcard MIME mapping. 
-404.18 - Query string sequence denied. 
-404.19 - Denied by filtering rule. 
-404.20 - Too Many URL Segments.
-                </pre>
-            </div>
-        </div>
-        <center><a href="https://patrickwu.space/">Bring Me Back</a></center>
-        <center><img src="https://cdn.patrickwu.space/base/404.gif" /></center>
+    <center><img src="https://cdn.patrickwu.space/status/<?= http_response_code() ?>.jpg" /></center>
+    <center><a href="https://patrickwu.space/">Bring Me Back</a></center>
+
     </div>
 </body>
 
