@@ -17,24 +17,14 @@ jobs:
         run: |
           hexo clean
           hexo generate
-      # - name: Deploy
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GIT_DEPLOY_KEY }}
-      #   run: |
-      #     git config --global user.email "me@patrickwu.space"
-      #     git config --global user.name "Jinming Wu, Patrick"
-      #     git clone --depth 1 https://patrick330602:$GH_TOKEN@github.com/patrick330602/patrick330602.github.io.git website
-      #     cp -rf ./public/* ./website/
-      #     git --git-dir=./website/.git --work-tree=./website add -A
-      #     git --git-dir=./website/.git --work-tree=./website commit -m "blog update at $(date)"
-      #     git --git-dir=./website/.git --work-tree=./website push
+          cp .htaccess ./public
       - name: Deploy
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          source: "public/*"
+          source: "public/*,public/.*"
           target: "/var/www/posts/"
           overwrite: true
           strip_components: 1
