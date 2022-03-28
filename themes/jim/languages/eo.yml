@@ -1,0 +1,41 @@
+name: Esperanto
+
+untitled: Sentitola (Ial)
+
+common:
+  home: Ĉefpaĝo
+  sitemap: paĝarmapo
+  archives: Arkivoj
+  rss: RSS
+  posts: Afiŝoj
+  tag: Etikedo
+  tags: Etikedoj
+  more: Pli da afiŝoj ĉi tie!
+  about: Pri Mi
+
+home:
+  social: 'Trovu min sur:'
+  talks: 'Mi parolis sur forumoj pri:'
+  friends: 'Ankaŭ, jen miaj amikoj:'
+
+post:
+  date: dato
+  tags: etikedoj
+  lang: lingvo
+  nav: Navigado
+  next: Sekvanta Afiŝo
+  prev: Antaŭa Afiŝo
+
+paginator:
+  title: Paĝonumerado
+  location: Vi estas ĉe <strong>Paĝo %d </strong>.
+  next: Sekvanta Paĝo
+  prev: Antaŭa Paĝo
+  onepage: Estas nur unu paĝo por ke estas nur paĝonumerado ¯\_(ツ)_/¯
+
+cc_license: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Permesilo Krea Komunaĵo" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Krom se mi specifis, ĉiuj afiŝoj estas disponeblaj laŭ la permesilo <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Krea Komunaĵo Atribuite-Samkondiĉe 4.0 Tutmonda</a>.
+
+powered_by: Ĉi tiu retejo estas funkciigita de <a href="https://hexo.io">Hexo</a> kaj gastigita sur <a href="https://pages.github.com/">GitHub Pages</a>.
+analytics_warning: Ĝi usas memgastigada <a href="http://www.openwebanalytics.com/">Open Web Analytics</a> por akiri komprenojn. Alklaki <a href="javascript:Toptout()">ĉi tiu</a> por supozi permeson.
+css_ref: Ĝi usas la belega CSS el <a href="http://bettermotherfuckingwebsite.com">bettermotherf**kingwebsite.com</a> kun kelkaj <a href="https://patrickwu.space/2020/01/04/a-even-better-motherfing-website/">optimumigoj</a>.
+code_ref: La fontkodo de ĉi tiu retejo estas gastigita <a href="https://github.com/patrick330602/blog-source">ĉi tiu</a>.

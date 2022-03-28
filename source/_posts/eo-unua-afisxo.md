@@ -1,8 +1,9 @@
 ---
 title: Mia Unua Afiŝo en Esperanto
 tags:
-  - Esperanto
+  - 'Write-ups'
 date: 2020-12-28 23:52:56
+lang: eo
 ---
 Estas mia una afiŝo en Esperanto sur ĉi tiu blogo. Estas homoj kiuj demandas mi 'Kial vi volas lerni Esperanto?' La origina caŭso estas ke mi volas uzi Esperanto por lerni aliaj lingvoj. Ĝin jam helpis: Mi ege trovas ke lerni la Francan pli facila(Oui, Je crois). Nun mi trovas, ke Esperanto estas amuza, kaj mi amas ĝin. 
 
