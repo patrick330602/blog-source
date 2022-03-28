@@ -5,6 +5,9 @@ tags:
 - Hexo
 - Web
 lang: zh
+multi_lang:
+  en: ''
+  zh: '-cn'
 ---
 
 ## 前言

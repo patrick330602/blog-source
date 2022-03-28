@@ -3,6 +3,9 @@ title: Enable Ubuntu Desktop Environment On Windows 10
 date: 2016-07-13 21:19:02
 tags:
 - WSL
+multi_lang:
+  en: ''
+  zh: '-ch'
 ---
 
 Right now, using X server, CCSM, Compiz and other components with Bash On Ubuntu On Windows, You can now run Linux desktop environment from Windows desktop.

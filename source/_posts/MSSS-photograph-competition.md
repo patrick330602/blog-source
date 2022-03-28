@@ -5,6 +5,7 @@ tags:
 - SDLP
 - Proposal
 - REDBird
+lang: zh
 ---
 
 **比賽內容**：對香港的城市風景以及自然風光的攝影

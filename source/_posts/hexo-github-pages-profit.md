@@ -4,6 +4,9 @@ date: 2017-06-27 09:11:10
 tags:
 - Hexo
 - Shell
+multi_lang:
+  en: ''
+  zh: '-cn'
 ---
 
 ## Introduction

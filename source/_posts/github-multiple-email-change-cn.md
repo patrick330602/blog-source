@@ -5,6 +5,9 @@ tags:
 - GitHub
 - Shell
 lang: zh
+multi_lang:
+  en: ''
+  zh: '-cn'
 ---
 最近，我在編寫一款掛載在GitHub的程序，但我突然發現我的Git狀態好像不太對。。。
 <!--more-->

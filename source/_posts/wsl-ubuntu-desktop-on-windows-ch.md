@@ -4,6 +4,9 @@ date: 2016-07-13 21:19:02
 tags:
 - WSL
 lang: zh
+multi_lang:
+  en: ''
+  zh: '-ch'
 ---
 
 > 從BashOnWindows GitHub網站上的[文章](https://github.com/Microsoft/BashOnWindows/issues/637) 進行整理和翻譯。

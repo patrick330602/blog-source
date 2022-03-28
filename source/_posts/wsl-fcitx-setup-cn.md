@@ -4,6 +4,9 @@ date: 2019-10-28 22:12:00
 tags:
 - WSL
 lang: zh
+multi_lang:
+  en: ''
+  zh: '-cn'
 ---
 
 # TL;DR

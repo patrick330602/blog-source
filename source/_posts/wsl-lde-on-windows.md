@@ -3,6 +3,9 @@ title: "Install LDE On windows 10(Updated)"
 date: 2016-08-23 21:38:08
 tags:
 - WSL
+multi_lang:
+  en: ''
+  zh: '-ch'
 ---
 Previously, I wrote a article about how to use X server, CCSM, Compiz and other components with Bash On Ubuntu On Windows to run Linux desktop environment from Windows desktop. Recently, I find a improved way of installing the LDE. 
 <!-- more -->

@@ -4,6 +4,9 @@ date: 2016-07-13 11:08:56
 tags:
 - GitHub
 - Shell
+multi_lang:
+  en: ''
+  zh: '-cn'
 ---
  Recently, I am programming an app on GitHub (Yes, it is WeCode as you have guessed), but I suddenly realized the commits are not properly shown in my dashboard:
 <!--more-->

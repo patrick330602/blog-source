@@ -3,6 +3,9 @@ title: Setup Input Method for WSL
 date: 2019-10-28 22:12:00
 tags:
 - WSL
+multi_lang:
+  en: ''
+  zh: '-cn'
 ---
 
 # TL;DR
