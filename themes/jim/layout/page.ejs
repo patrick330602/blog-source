@@ -3,22 +3,11 @@
 	<h1><%= page.title|| __('Untitled') %></h1>
 
 	---<br />
-	<%= __('page.date') %>: <%= format_date_full(page.date) %><br/>
+	<%= __('post.date') %>: <%= format_date_full(page.date) %><br/>
 	---
 </div>
 
 	  <div>
-
-		<% if (page.banner){ %>
-			
-				<div class="banner" 
-				src="<%- url_for(page.banner) %>" 
-				style="background-image:url(<%- url_for(page.banner) %>)"> </div>	
-
-		<% } else if (page.photos && page.photos.length){ %> 	
-				<%- partial('_partial/_post/gallery',{post:page}) %>			
-		<%}%>
-
 			<% if (page.excerpt && page.hide_excerpt ){ %>
 					<%- page.more %>  					
 			<%} else{%>

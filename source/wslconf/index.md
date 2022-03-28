@@ -5,7 +5,7 @@ tags:
 - WSL
 - WSL2
 lang: en
-lang_switch: false
+lang_switch: 'false'
 ---
 
 This is the resource page for things I have talked about or not talked about on the session ***Scripting with WSL interoperability: Tips & Tricks***. 
