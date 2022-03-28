@@ -1,0 +1,14 @@
+{
+    "zh": {
+        "Write-ups":"寫作",
+        "Thesis":"論文",
+        "Essay":"文章",
+        "Proposal":"報告書",
+        "Annual Review":"年度總結",
+        "Shell": "Shell（命令行殼層）",
+        "Interop": "Interop（互通性）"
+    },
+    "eo": {
+        "Write-ups":"Skriboj"
+    }
+}

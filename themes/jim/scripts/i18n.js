@@ -1,5 +1,7 @@
 const _ = require('lodash');
 const util = require('hexo-util');
+const fs = require('fs');
+const path = require('path');
 const postGenerator = require('hexo/lib/plugins/generator/post');
 const indexGenerator = require('hexo-generator-index/lib/generator');
 const archiveGenerator = require('hexo-generator-archive/lib/generator');
@@ -331,3 +333,18 @@ hexo.extend.helper.register('language_name', function (language) {
     const name = hexo.theme.i18n.__(language)('name');
     return name === 'name' ? language : name;
 });
+
+hexo.extend.helper.register('i18n_for_tag', function (tag_name) {
+    var sourceDir = hexo.source_dir, language = getPageLanguage(this.page);
+  
+    var filepath = path.join(sourceDir, "_data/i18n.json");
+    if (!fs.existsSync(filepath)) return tag_name;
+    var data = fs.readFileSync(filepath, 'utf8');
+    const d = JSON.parse(data);
+    if (!isDefaultLanguage(language)) {
+        if (tag_name in d[language]) {
+            return d[language][tag_name];
+        }
+    }
+    return tag_name;
+  });

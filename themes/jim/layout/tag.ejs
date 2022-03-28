@@ -1,6 +1,6 @@
 <section>
     <span class="page-title">
-        <h1><%= __('common.tag') + ": " + page.tag %></h1>
+        <h1><%= __('common.tag') + ": " + i18n_for_tag(page.tag) %></h1>
     </span>
 
     <% page.posts.each(function (post) { %>
