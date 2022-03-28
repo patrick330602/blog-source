@@ -1,7 +1,7 @@
 <% const languages = display_languages();
 
 if (languages.length > 1) {%>
-    <% if (!(is_tag() || is_post() || page.lang_switch === "false")) { %>
+    <% if (!(is_archive() || is_tag() || is_post() || page.lang_switch === "false")) { %>
     <% languages.forEach((language, idx, array) => { %>
         <% if (language === page_language()) { %>
             <%= language_name(language) %>
@@ -12,8 +12,6 @@ if (languages.length > 1) {%>
          | 
         <% } %>
     <% }) %>
-    <% } else if (!(is_post())) { %>
-        <%= __("lang_disabled") %>
     <% } %>
     <br/>
 <%} %>

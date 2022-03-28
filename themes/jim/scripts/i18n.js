@@ -235,7 +235,8 @@ hexo.extend.generator.register('tags', injectLanguages(function(languages, local
             }
             return Object.assign({}, tag, {
                 posts: posts,
-                path: isDefaultLanguage(language) ? tag.path : pathJoin(language, tag.path)
+                path: isDefaultLanguage(language) ? tag.path : pathJoin(language, tag.path),
+                real_length: posts.length
             });
         }).filter(category => category !== null);
         return {

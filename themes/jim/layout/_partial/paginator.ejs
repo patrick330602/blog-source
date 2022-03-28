@@ -4,13 +4,13 @@
 <%- render(_p('paginator.location', page.current), 'ejs') %>
 <br />
 <% if (page.prev) { %>
-<a href="<%- url_for(page.prev_link) %>"><%= __('paginator.prev') %></a>
+<a href="<%- url_for(lang_prepend(page.prev_link)) %>"><%= __('paginator.prev') %></a>
 <% } else {%>
     <%= __('paginator.prev') %>
 <% } %>
 　<br />
 <% if (page.next) { %>
-<a href="<%- url_for(page.next_link) %>"><%= __('paginator.next') %></a>
+<a href="<%- url_for(lang_prepend(page.next_link)) %>"><%= __('paginator.next') %></a>
 <% } else {%>
     <%= __('paginator.next') %>
 <% } %>

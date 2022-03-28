@@ -18,8 +18,6 @@ home:
   talks: '我的一些報告們：'
   friends: '我的朋友們：'
 
-lang_disabled: 因為生成器的限制，無法在此介面選擇語言。
-
 post:
   date: 日期
   tags: 標籤
