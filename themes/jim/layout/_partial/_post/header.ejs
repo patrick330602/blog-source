@@ -14,5 +14,25 @@
 			  separator:"<br />- "      
 			  }) %>
 	<% }%><br />
+	<% const languages = display_languages();
+
+	if (languages.length > 1) {%>
+		<% if (page.lang_switch !== "false") { %>
+			<%= __('post.lang') %>:
+			<% if (page.multi_lang) { %>
+				<% for (var language in page.multi_lang) {  %>
+					<% if (language === page_language()) { %>
+						<%= language_name(language) %>
+					<% } else { %>
+						<% var lang_key = page.multi_lang[language]; var cur_lang_count = page.multi_lang[page_language()].length %>
+						<a href="<%= url_for(page.path).slice(0, (-1 - cur_lang_count)) + lang_key + '/' %>"><%= language_name(language) %></a>
+					<% } %>
+				<% } %>
+			<% } else { %>
+				<%= language_name(page_language()) %>
+			<% } %>
+		<% } %>
+		<br/>
+	<%} %>
 	---
 </div>

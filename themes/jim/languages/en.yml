@@ -24,6 +24,7 @@ lang_disabled: Change of language for the page is disabled for the limitation of
 post:
   date: date
   tags: tags
+  lang: language
   nav: Navigation
   next: Next Post
   prev: Previous Post

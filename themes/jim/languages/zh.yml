@@ -23,6 +23,7 @@ lang_disabled: 因為生成器的限制，無法在此介面選擇語言。
 post:
   date: 日期
   tags: 標籤
+  lang: 語言
   nav: 導覽
   next: 下一篇
   prev: 上一篇
