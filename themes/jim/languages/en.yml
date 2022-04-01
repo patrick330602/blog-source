@@ -5,13 +5,12 @@ untitled: Untitled (for some reason)
 common:
   home: Main
   sitemap: Sitemap
-  archives: Archives
   rss: RSS
   posts: Posts
+  comic: Comic
+  blog: Blog
   tag: Tag
   tags: Tags
-  more: More this way!
-  about: About Me
 
 home:
   social: 'Find me on:'

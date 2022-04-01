@@ -5,13 +5,10 @@ untitled: 未命名（不知為何）
 common:
   home: 首頁
   sitemap: 站點地圖
-  archives: 存檔
   rss: RSS
   posts: 文章
   tag: 標籤
   tags: 標籤
-  more: 查看更多文章！
-  about: 關於我
 
 home:
   social: '這些地方可以找到我：'
