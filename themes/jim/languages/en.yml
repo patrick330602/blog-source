@@ -34,7 +34,5 @@ paginator:
 
 cc_license: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Unless specified, all the articles are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-powered_by: The site is powered by <a href="https://hexo.io">Hexo</a> hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
 analytics_warning: It uses a self-hosted <a href="http://www.openwebanalytics.com/">Open Web Analytics</a> to get insights. Click <a href="javascript:Toptout()">here</a> to optout.
-css_ref: It is using the glorious CSS from <a href="http://bettermotherfuckingwebsite.com">bettermotherf**kingwebsite.com</a> with some <a href="https://patrickwu.space/2020/01/04/a-even-better-motherfing-website/">tweaks</a>. Censored the f-word for good.
-code_ref: The source code of this website is hosted at <a href="https://github.com/patrick330602/blog-source">here</a>, so that you can see the spaghetti code behind my blog.
+ref: The site is powered by <a href="https://hexo.io">Hexo</a>. The source code of this website is <a href="https://github.com/patrick330602/blog-source">here</a>, so that you can see the spaghetti code behind my blog.

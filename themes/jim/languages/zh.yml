@@ -33,7 +33,5 @@ paginator:
   onepage: 只有一頁，所以沒分頁 ¯\_(ツ)_/¯
 
 cc_license: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />除非特別註明，本站文章皆採用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">創用 CC 姓名標示-相同方式分享 4.0 國際 授權條款</a>授權.
-powered_by: 本網站由 <a href="https://hexo.io">Hexo</a> 驅動，掛載於 <a href="https://pages.github.com/">GitHub Pages</a>。
 analytics_warning: 本站使用了自行託管的 <a href="http://www.openwebanalytics.com/">Open Web Analytics</a> 以取得站點分析。點擊<a href="javascript:Toptout()">此處</a>選擇退出。
-css_ref: 本站使用了來自 <a href="http://bettermotherfuckingwebsite.com">bettermotherf**kingwebsite.com</a> 的 CSS，並進行了<a href="https://patrickwu.space/2020/01/04/a-even-better-motherfing-website/">改造</a>。
-code_ref: 本網站源碼掛載於<a href="https://github.com/patrick330602/blog-source">此</a>。
+ref: 本網站由 <a href="https://hexo.io">Hexo</a> 驅動。本網站源碼掛載於<a href="https://github.com/patrick330602/blog-source">此</a>。
