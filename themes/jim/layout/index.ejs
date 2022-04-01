@@ -5,9 +5,11 @@
 <h1><%= config.title %></h1>
 
 <div>
+	<%- partial('_partial/languages') %>
+	<%- partial('_partial/navigation') %>
 	<%- include_md('_index/' + page_language() + '.md') %>
 
-	<div class="row">
+<!-- 	<div class="row">
 		<div class="column">
 			<a href="<%- url_for(lang_prepend('/blog')) %>">
 				<img alt="<%= __('common.blog') %>" src="//cdn.patrickwu.space/base/topic-write.png"/><br/>
@@ -20,7 +22,7 @@
 				<b><%= __('common.comic') %></b>
 			</a>
 		</div>
-	</div>
+	</div> -->
 	<div>
 		<input id="toggle-list-1" class="toggle" type="checkbox">
 		<label for="toggle-list-1" class="fancy-toggle-1"><%= __('home.social') %></label>
