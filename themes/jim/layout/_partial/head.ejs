@@ -5,7 +5,7 @@
     var title = titlecase(page.title);
 
     if (is_archive()){
-      title = __('common.archives');   
+      title = __('common.blog');   
     } else if (is_tag()){
       title = __('common.tag') + ': ' + i18n_for_tag(page.tag);
   }

@@ -1,11 +1,19 @@
 <section>
-
-    <h1><%= __('common.archives') %> </h1>
+    <h1><%= config.title %></h1>
+    <h2><%= __('common.blog') %>  | <a href="<%- url_for(lang_prepend('/tags')) %>"><%= __('common.tags') %> </a></h2>
+    
    
     <% page.posts.each(function (post) { %>
-        <div>
-          <time><b><%= format_date_full(post.date) %></b></time> - 
+        <div style="padding: 0 0 10px 0;">
           <a  href="<%- url_for(post.path) %>"><%= post.title || __('untitled')%></a>
+          <br />
+          <time><b><%= format_date_full(post.date) %></b></time> ><span>
+            <% if( post.tags &&  post.tags.length > 0 ) {%>
+              <% post.tags.forEach(tag => {%>
+              <a href="<%- url_for(lang_prepend(tag.path)) %>"><%= i18n_for_tag(tag.name) %></a> 
+              <% })%>
+            <% }%>
+          </span>
         </div>
 
     <% }) %>
