@@ -88,10 +88,6 @@ feed:
     - atom.xml
     - rss2.xml
 
-sitemap:
-  path: sitemap.xml
-  template: ./sitemap_template.xml
-
 colorblock:
   width: 10
   height: 10
