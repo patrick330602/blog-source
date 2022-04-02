@@ -1,7 +1,7 @@
 // index.js
 var fs   = require('fs'),
   path = require('path'),
-  md = require('markdown-it')();
+  md = require('markdown-it')({html: true});
 
 
  hexo.extend.helper.register('include_md', function (md_path) {

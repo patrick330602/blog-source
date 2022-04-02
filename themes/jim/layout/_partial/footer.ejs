@@ -3,13 +3,12 @@
 
 <hr/>
 
-<%- render(__('cc_license'), 'ejs') %>
+<%- include_md('_i18n/' + page_language() + '/license.md') %>
 
 <hr/>
 
 <p>
-     <%- render(__('analytics_warning'), 'ejs') %><br/>
-     <%- render(__('ref'), 'ejs') %>
+     <%- include_md('_i18n/' + page_language() + '/footer.md') %>
 </p>
 
 

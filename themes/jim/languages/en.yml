@@ -32,8 +32,3 @@ paginator:
   next: Next Page
   prev: Previous Page
   onepage: There is only one page, so no paginator ¯\_(ツ)_/¯
-
-cc_license: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Unless specified, all the articles are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-analytics_warning: It uses a self-hosted <a href="http://www.openwebanalytics.com/">Open Web Analytics</a> to get insights. Click <a href="javascript:Toptout()">here</a> to optout.
-ref: The site is powered by <a href="https://hexo.io">Hexo</a>. The source code of this website is <a href="https://github.com/patrick330602/blog-source">here</a>, so that you can see the spaghetti code behind my blog.
