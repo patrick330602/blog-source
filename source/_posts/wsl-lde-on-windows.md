@@ -1,5 +1,5 @@
 ---
-title: "Install LDE On windows 10(Updated)"
+title: "Install LDE On windows 10 (Updated)"
 date: 2016-08-23 21:38:08
 tags:
 - WSL

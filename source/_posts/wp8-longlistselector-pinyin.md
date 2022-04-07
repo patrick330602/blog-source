@@ -1,5 +1,5 @@
 ---
-title: Windows Phone 8 LongListSelector按拼音首字母分組
+title: Windows Phone 8 LongListSelector 按拼音首字母分組
 date: 2014/10/16 08:00:00
 tags:
 - C#

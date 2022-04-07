@@ -1,5 +1,5 @@
 ---
-title: "啟用Surface Book上Ubuntu的觸屏"
+title: "啟用 Surface Book 上 Ubuntu 的觸屏"
 date: 2017-03-16 13:49:48
 tags:
 - Linux

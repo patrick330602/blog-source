@@ -1,5 +1,5 @@
 ---
-title: 在Windows 10下啟用Ubuntu桌面環境
+title: 在 Windows 10 下啟用 Ubuntu 桌面環境
 date: 2016-07-13 21:19:02
 tags:
 - WSL

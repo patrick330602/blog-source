@@ -1,5 +1,5 @@
 ---
-title: 如何批量更改commit的郵箱
+title: 如何批量更改 commit 的郵箱
 date: 2016-07-13 11:08:56
 tags:
 - GitHub

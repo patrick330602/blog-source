@@ -1,5 +1,5 @@
 ---
-title: DIV下圖片自適應解決方法
+title: DIV 下圖片自適應解決方法
 date: 2008-08-05 15:45:19
 tags:
 - Web

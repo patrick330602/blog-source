@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Byte[],Stream,Ibuffer,IRandomAccessStream的互相轉換
+title: Byte[], Stream, Ibuffer, IRandomAccessStream 的互相轉換
 date: 2014/9/7 20:46:25
 tags:
 - C#

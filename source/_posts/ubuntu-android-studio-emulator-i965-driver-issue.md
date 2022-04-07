@@ -1,5 +1,5 @@
 ---
-title: 解決Ubuntu 17.10下Android Studio模擬器無法執行的問題
+title: 解決 Ubuntu 17.10 下 Android Studio 模擬器無法執行的問題
 date: 2018-03-18 15:05:36
 tags:
 - Android

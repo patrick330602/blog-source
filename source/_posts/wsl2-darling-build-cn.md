@@ -1,5 +1,5 @@
 ---
-title: 在WSL2上編譯並使用Darling
+title: 在 WSL2 上編譯並使用 Darling
 date: 2019-10-29 10:12:12
 tags:
 - WSL

@@ -1,5 +1,5 @@
 ---
-title: "Enable touch on Ubuntu on Surface Book 启用Surface Book上Ubuntu的触屏"
+title: "Enable touch on Ubuntu on Surface Book"
 date: 2017-03-16 13:49:48
 tags:
 - Linux

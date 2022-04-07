@@ -1,5 +1,5 @@
 ---
-title: 在WSL上配置輸入法
+title: 在 WSL 上配置輸入法
 date: 2019-10-28 22:12:00
 tags:
 - WSL

@@ -1,5 +1,5 @@
 ---
-title: "在Windows10上安裝Linux桌面環境(更新)"
+title: "在 Windows 10 上安裝 Linux 桌面環境(更新)"
 date: 2016-08-23 21:38:08
 tags:
 - WSL

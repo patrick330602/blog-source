@@ -1,6 +1,6 @@
 ---
 title: >-
-  Solving Native Docker(Not Docker Desktop) unable to start on Ubuntu 20.10+ on
+  Solving Native Docker (Not Docker Desktop) unable to start on Ubuntu 20.10+ on
   WSL
 tags:
   - Docker

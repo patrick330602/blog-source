@@ -1,5 +1,5 @@
 ---
-title: WP8停止音樂實現辦法
+title: WP8 停止音樂實現辦法
 tags:
   - C#
   - WP8

@@ -1,5 +1,5 @@
 ---
-title: The Walk·行
+title: The Walk
 tag:
 - "Write-ups"
 - REDBird

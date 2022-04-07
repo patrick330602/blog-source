@@ -1,5 +1,5 @@
 ---
-title: Windows Phone 8 APP中禁用截圖
+title: Windows Phone 8 APP 中禁用截圖
 tags:
 - C#
 - WP8
