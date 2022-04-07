@@ -15,7 +15,17 @@
   <meta name="twitter:creator" content="@callmepkwu" />
   <meta property="og:url" content="<%= config.url + '/' + page.path %>" />
   <meta property="og:title" content="<% if (title){ %><%= title %> | <% } %><%= config.title %>" />
+  <% if (is_post()) { %>
+    <% var time = date(page.date,  "HH:mm")
+        if (time > "18:00") {
+          var theme= 'dark';
+        } else {
+          var theme= 'light';
+        } %>
+    <meta property="og:image" content="https://api.patrickwu.space/core/thumbnail?file=<%- page.path.split('/').slice(-2)[0] %>&title=<%= page.title %>&date=<%= format_date_full(page.date) %>&theme=<%= theme %>&lang=<%= page_language() %>" />
+  <% } else { %>
   <meta property="og:image" content="https://cdn.patrickwu.space/base/social.png" />
+  <% } %>
   <title><% if (title){ %>  <%= title %> | <% } %><%= config.title %> </title>
 
   <% const languages = display_languages();
