@@ -33,7 +33,8 @@
 
 <body>
     <center><img src="https://cdn.patrickwu.space/status/<?= http_response_code() ?>.jpg" /></center>
-    <center><a href="https://patrickwu.space/">Bring Me Back</a></center>
+    <center>Powered by <a href="https://http.cat">http.cat</a></center><br/>
+    <center><a href="https://patrickwu.space/">Bring Me Back</a> | <a href="https://patrickwu.space/zh">帶我回去</a></center>
 
     </div>
 </body>
