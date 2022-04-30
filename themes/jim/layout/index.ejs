@@ -1,12 +1,11 @@
 <%# profile %>
 
 <% var profile = theme.profile %>
-
+<div class="header">
 <h1><%= config.title %></h1>
-
+<%- partial('_partial/languages') %>
+</div>
 <div>
-	<%- partial('_partial/languages') %>
-
 	<div class="row">
 		<div class="column">
 			<a href="<%- url_for(lang_prepend('/blog')) %>">

@@ -46,11 +46,6 @@ h6:before {
   content: "###### ";
 }
 
-h1 a:hover,
-h1 a:active {
-  text-decoration: none;
-}
-
 /* link extension */
 
 a:link {
@@ -88,7 +83,18 @@ blockquote {
   padding: 0 10px 0;
 }
 
-/* tag extension */
+/* index extension */
+
+.header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.header > h1 {
+  line-height: 1;
+}
+.header > h1:before {
+  content: "";
+}
 
 .hometag {
   border: 1px solid #555;
