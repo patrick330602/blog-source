@@ -24,6 +24,19 @@
 	<%- include_md('_i18n/' + page_language() + '/intro.md') %>
 
 	<div>
+		<input id="toggle-list-4" class="toggle" type="checkbox">
+		<label for="toggle-list-4" class="fancy-toggle-4"><%= __('home.support') %></label>
+		<div class="list">
+			<p>
+				<ul>
+					<% for (var i in site.data.support) { %>
+						<li><a href="<%= site.data.support[i] %>"><%= i %></a></li>
+					<% } %>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div>
 		<input id="toggle-list-1" class="toggle" type="checkbox">
 		<label for="toggle-list-1" class="fancy-toggle-1"><%= __('home.social') %></label>
 		<div class="list">

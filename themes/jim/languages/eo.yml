@@ -13,6 +13,7 @@ common:
   tags: Etikedoj
 
 home:
+  support: 'Subtenu min sur:'
   social: 'Trovu min sur:'
   talks: 'Mi parolis sur forumoj pri:'
   friends: 'Ankaŭ, jen miaj amikoj:'

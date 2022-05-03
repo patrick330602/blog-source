@@ -13,6 +13,7 @@ common:
   tags: 標籤
 
 home:
+  support: '支持我的方式：'
   social: '這些地方可以找到我：'
   talks: '我的一些報告們：'
   friends: '我的朋友們：'
