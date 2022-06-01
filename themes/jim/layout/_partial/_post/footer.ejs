@@ -1,11 +1,21 @@
 <% if (page.comments !== "false") { %>
-<h2><%= __('post.comments') %> </h2>
 
-<script src="https://utteranc.es/client.js"
-        repo="patrick330602/blog-source"
-        issue-term="pathname"
-        label="comment"
-        theme="preferred-color-scheme"
+<script src="https://giscus.app/client.js"
+        data-repo="patrick330602/blog-source"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzMzQxOTM5OTY="
+        data-category="General"
+        data-category-id="DIC_kwDOE-tlTM4CPaV9"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+<% if (page_language() == "zh") { %> 
+        data-lang="zh-TW"
+<% } else { %>
+        data-lang="en"
+<% } %>
+        data-loading="lazy"
         crossorigin="anonymous"
         async>
 </script>
