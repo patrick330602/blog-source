@@ -1,3 +1,16 @@
+<% if (page.comments !== "false") { %>
+<h2><%= __('post.comments') %> </h2>
+
+<script src="https://utteranc.es/client.js"
+        repo="patrick330602/blog-source"
+        issue-term="pathname"
+        label="comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+<% } %>
+
 <h2><%= __('post.nav') %> </h2>
 
 <% if (page.prev || page.next){ %>

@@ -24,6 +24,7 @@ post:
   tags: tags
   lang: language
   nav: Navigation
+  comments: Comments
   next: Next Post
   prev: Previous Post
 
