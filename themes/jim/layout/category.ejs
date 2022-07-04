@@ -4,12 +4,12 @@
 
   	<h1><%=  "Category: "+ page.category %></h1>
 
-  	 <% page.posts.each(function (post) { %>  
+  	 <% page.posts.each(function (post) { %>
 
-        <%- partial('_partial/item',{post:post}) %>       
+        <%- partial('_partial/item',{post:post}) %>
 
-  	 <% }) %> 	
-  <%}%>	    
+  	 <% }) %>
+  <%}%>
 </section>
 
 <%- partial('_partial/paginator') %>
