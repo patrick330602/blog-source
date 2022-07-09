@@ -46,6 +46,13 @@ h6:before {
   content: "###### ";
 }
 
+/* footer extension */
+
+.footer {
+  text-align: center;
+  font-size: 16px;
+}
+
 /* link extension */
 
 a:link {

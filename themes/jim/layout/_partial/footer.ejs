@@ -2,7 +2,7 @@
 <% var year = date(new Date(), 'YYYY') %>
 
 <hr/>
-
+<div class="footer">
 <%- include_md('_i18n/' + page_language() + '/license.md') %>
 
 <hr/>
@@ -20,3 +20,4 @@
 <%= since %> - <%= year %>
 |
 <%= config.author %>
+</div>
