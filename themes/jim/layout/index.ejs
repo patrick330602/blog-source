@@ -6,20 +6,11 @@
 <%- partial('_partial/languages') %>
 </div>
 <div>
-	<div class="row">
-		<div class="column">
-			<a href="<%- url_for(lang_prepend('/blog')) %>">
-				<img alt="<%= __('common.blog') %>" src="//cdn.patrickwu.space/base/topic-write.png"/><br/>
-				<b><%= __('common.blog') %></b>
-			</a>
-		</div>
-		<div class="column">
-			<a href="//comic.patrickwu.space/">
-				<img alt="<%= __('common.comic') %>" src="//cdn.patrickwu.space/base/topic-comic.png"/><br/>
-				<b><%= __('common.comic') %></b>
-			</a>
-		</div>
-	</div>
+	<nav>
+			<a href="<%- url_for(lang_prepend('/blog')) %>"><%= __('common.blog') %></a> /
+			<a href="//comic.patrickwu.space/"><%= __('common.comic') %></a> /
+			<a href="//podcasts.patrickwu.space/"><%= __('common.podcasts') %></a>
+	</nav>
 
 	<%- include_md('_i18n/' + page_language() + '/intro.md') %>
 

@@ -90,6 +90,10 @@ blockquote {
   padding: 0 10px 0;
 }
 
+nav {
+text-align: center;
+}
+
 /* index extension */
 
 .header {
