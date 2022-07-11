@@ -90,10 +90,6 @@ blockquote {
   padding: 0 10px 0;
 }
 
-nav {
-text-align: center;
-}
-
 /* index extension */
 
 .header {
@@ -106,6 +102,10 @@ text-align: center;
 .header > h1:before {
   content: "";
 }
+
+.home-nav {
+  text-align: center;
+  }
 
 .hometag {
   border: 1px solid #555;
