@@ -1,24 +1,18 @@
 <% if (page.comments !== "false") { %>
 
-<script src="https://giscus.app/client.js"
-        data-repo="patrick330602/blog-source"
-        data-repo-id="MDEwOlJlcG9zaXRvcnkzMzQxOTM5OTY="
-        data-category="General"
-        data-category-id="DIC_kwDOE-tlTM4CPaV9"
-        data-mapping="pathname"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
+<script data-isso="//api.patrickwu.space/isso/main"
 <% if (page_language() == "zh") { %> 
-        data-lang="zh-TW"
+  data-isso-lang="zh-TW"
+<% } else if (page_language() == "eo") { %> 
+  data-isso-lang="eo"
 <% } else { %>
-        data-lang="en"
+  data-isso-lang="en"
 <% } %>
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
+  src="//api.patrickwu.space/isso/main/js/embed.min.js"></script>
+
+<section id="isso-thread">
+    <noscript>Javascript needs to be activated to view comments.</noscript>
+</section>
 <% } %>
 
 <h2><%= __('post.nav') %> </h2>
