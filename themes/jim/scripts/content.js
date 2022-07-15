@@ -162,3 +162,7 @@ hexo.extend.helper.register('toc_list', (content) => {
     });
     return tocList;
 });
+
+hexo.extend.helper.register('escape_string_for_url', (content) => {
+    return content.replace(/#/g, '%23');
+});

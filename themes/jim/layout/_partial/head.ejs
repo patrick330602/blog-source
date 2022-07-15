@@ -22,7 +22,7 @@
         } else {
           var theme= 'light';
         } %>
-    <meta property="og:image" content="https://api.patrickwu.space/core/thumbnail?file=<%- page.path.split('/').slice(-2)[0] %>&title=<%= page.title %>&date=<%= format_date_full(page.date) %>&theme=<%= theme %>&lang=<%= page_language() %>" />
+    <meta property="og:image" content="https://api.patrickwu.space/core/thumbnail?file=<%- page.path.split('/').slice(-2)[0] %>&title=<%= escape_string_for_url(page.title) %>&date=<%= format_date_full(page.date) %>&theme=<%= theme %>&lang=<%= page_language() %>" />
   <% } else { %>
   <meta property="og:image" content="https://cdn.patrickwu.space/base/social.png" />
   <% } %>
