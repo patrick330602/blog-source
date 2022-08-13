@@ -8,3 +8,4 @@ public/
 .deploy*/
 .vscode
 themes/jane/node_modules/
+.dccache
