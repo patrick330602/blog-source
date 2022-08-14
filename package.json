@@ -3,7 +3,7 @@
   "version": "10.0.0",
   "private": true,
   "hexo": {
-    "version": "6.1.0"
+    "version": "6.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,6 +27,6 @@
     "hexo-tag-youtube-responsive": "^0.4.2",
     "hexo-util": "^2.6.0",
     "lodash": "^4.17.21",
-    "moment": "^2.29.3"
+    "moment": "^2.29.4"
   }
 }
