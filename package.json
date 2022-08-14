@@ -26,7 +26,6 @@
     "hexo-tag-twitter": "^1.0.1",
     "hexo-tag-youtube-responsive": "^0.4.2",
     "hexo-util": "^2.6.0",
-    "lodash": "^4.17.21",
-    "moment": "^2.29.4"
+    "lodash": "^4.17.21"
   }
 }
