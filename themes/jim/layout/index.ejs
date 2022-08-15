@@ -34,7 +34,7 @@
 			<p>
 				<ul>
 					<% for (var i in site.data.social) { %>
-						<li><a href="<%= site.data.social[i] %>"><%= i %></a></li>
+						<li><a <% if (i == 'Mastodon') { %>rel="me" <% } %>href="<%= site.data.social[i] %>"><%= i %></a></li>
 					<% } %>
 				</ul>
 			</p>
