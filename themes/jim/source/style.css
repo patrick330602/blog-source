@@ -122,6 +122,12 @@ blockquote {
   content: "";
 }
 
+.image-caption {
+  font-style: italic;
+  text-align: center;
+  font-size: 16px;
+  }
+
 /* code block extension */
 pre {
   font: 0.8em/1.0em "CascadiaCPL", "Courier New", Courier;
