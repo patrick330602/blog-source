@@ -43,44 +43,7 @@ if (languages.length > 1) {
     <link rel="icon" href="<%- url_for(  theme.favicon ) %>">
   <% } %>
 
-<script type="text/javascript">
-  //<![CDATA[
-  function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-  function Toptout() {
-    document.cookie = "patblog_track_is_opt_out=a; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/;";
-    window['patblog_track_is_opt_out'] = 'a';
-  }
-  var owa_baseUrl = 'https://api.patrickwu.space/analytics/';
-  var owa_cmds = owa_cmds || [];
-  is_opt_out=getCookie("patblog_track_is_opt_out");
-  owa_cmds.push(['setSiteId', 'f134ed8fb95667ce94bbca095d32af45']);
-  if(is_opt_out != "" ) {owa_cmds.push(['pause-owa']);}
-  owa_cmds.push(['trackPageView']);
-  owa_cmds.push(['trackClicks']);
-  owa_cmds.push(['trackDomStream']);
-  if(is_opt_out != "" ) {owa_cmds.push(['unpause-owa']);}
-  
-  (function() {
-      var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-      owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-      _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-      var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-  }());
-  //]]>
-  </script>
+  <script async defer data-website-id="110d913a-dcd0-4103-824d-2f05e033539b" src="https://analytics.wedotstud.io/umami.js"></script>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
   <%- js('honk.js') %>
