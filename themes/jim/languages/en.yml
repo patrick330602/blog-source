@@ -9,6 +9,7 @@ common:
   posts: Posts
   comic: Comic
   podcasts: Podcasts
+  projects: Projects
   blog: Blog
   tag: Tag
   tags: Tags
