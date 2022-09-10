@@ -219,7 +219,11 @@ hexo.extend.helper.register(
 hexo.extend.helper.register(
   "format_date_full",
   injectMomentLocale(function (date) {
-    return moment(date).format("YYYY MMM Do");
+    const lang = getPageLanguage(this.page);
+    if (lang === "zh") {
+      return moment(date).format("YYYY年MMMDo");
+    }
+    return moment(date).format("MMM Do, YYYY");
   })
 );
 
@@ -322,7 +326,10 @@ hexo.extend.helper.register("escape_string_for_url", (content) => {
     .replace(/\]/g, "%5D");
 });
 
-hexo.extend.filter.register('after_post_render', function(data) {
-            data.content = data.content.replace(/(<img [^>]*alt="([^"]+)">)/g, '<figure class="image-caption">$1<figcaption>$2</figcaption></figure>');
-    return data;
+hexo.extend.filter.register("after_post_render", function (data) {
+  data.content = data.content.replace(
+    /(<img [^>]*alt="([^"]+)">)/g,
+    '<figure class="image-caption">$1<figcaption>$2</figcaption></figure>'
+  );
+  return data;
 });
