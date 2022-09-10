@@ -96,16 +96,18 @@ blockquote {
   text-align: center;
   margin-bottom: 15px;
 }
-.header > h1 {
+
+.header>h1 {
   line-height: 1;
 }
-.header > h1:before {
+
+.header>h1:before {
   content: "";
 }
 
 .home-nav {
   text-align: center;
-  }
+}
 
 .hometag {
   border: 1px solid #555;
@@ -126,7 +128,7 @@ blockquote {
   font-style: italic;
   text-align: center;
   font-size: 16px;
-  }
+}
 
 /* code block extension */
 pre {
@@ -249,7 +251,7 @@ code {
   display: block;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"].toggle {
   display: none;
 }
 
