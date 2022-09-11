@@ -62,3 +62,42 @@ console.log(honk);
 //secretly honking
 //I am still honking
 //HONK
+
+function load() {
+  const button = document.querySelector(".btn");
+
+  // MediaQueryList object
+  const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Toggles the "dark-mode" class based on if the media query matches
+  function toggleDarkMode(state) {
+    // Older browser don't support the second parameter in the
+    // classList.toggle method so you'd need to handle this manually
+    // if you need to support older browsers.
+    if (state !== undefined) {
+      document.documentElement.classList.toggle("dark", state);
+    } else {
+      document.documentElement.classList.toggle("dark");
+    }
+
+    var pic = document.getElementsByClassName("theme-switch")[0];
+    pic.src = document.documentElement.classList.contains("dark")
+      ? window.location.origin + "/dark.svg"
+      : window.location.origin + "/light.svg";
+  }
+
+  // Initial setting
+  toggleDarkMode(useDark.matches);
+
+  // Listen for changes in the OS settings
+  useDark.addListener((evt) => toggleDarkMode(evt.matches));
+
+  // Toggles the "dark-mode" class on click
+  button.addEventListener("click", () => {
+    toggleDarkMode();
+  });
+}
+
+window.addEventListener("DOMContentLoaded", load);
+
+//HONK

@@ -4,13 +4,13 @@
 <% if (! is_home()) { %>
 <a href="<%- url_for(lang_prepend('/blog')) %>"><%= __('common.blog') %></a>
 |
+<% } %>
 <a href="https://comic.patrickwu.space/" target="_blank"><%= __('common.comic') %></a>
 |
 <a href="https://podcasts.patrickwu.space/" target="_blank"><%= __('common.podcasts') %></a>
 |
 <a href="https://wedotstud.io/" target="_blank"><%= __('common.projects') %></a>
 |
-<% } %>
 <a href="https://patrickwu.space/rss2.xml" target="_blank"><%= __('common.rss') %></a> 
 | 
 <a href="https://patrickwu.space/sitemap.xml" target="_blank"><%= __('common.sitemap') %></a>

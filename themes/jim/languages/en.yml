@@ -15,6 +15,8 @@ common:
   tags: Tags
 
 home:
+  about: About
+  contact: "Contact me via:"
   support: 'Support me on:'
   social: 'Find me on:'
   talks: 'I got talks and panels like:'

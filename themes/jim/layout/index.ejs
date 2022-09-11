@@ -6,11 +6,27 @@
 <%- partial('_partial/languages') %>
 </div>
 <div>
-	<nav class="home-nav">
-			<a href="<%- url_for(lang_prepend('/blog')) %>"><%= __('common.blog') %></a> /
-			<a href="//comic.patrickwu.space/"><%= __('common.comic') %></a> /
-			<a href="//podcasts.patrickwu.space/"><%= __('common.podcasts') %></a>
-	</nav>
+	<div id="sec-post">
+		<%# blog %>
+		<h2 class="home-title"><%= __('common.blog') %> <a href="<%- url_for(lang_prepend('/blog')) %>">></a></h2>
+		<% var local_post_count = 0 %>
+		<% page.posts.each(function (post) { %>
+		<% if( post.categories &&  post.categories.length == 0 && local_post_count < 5 ) {%>
+		<p>
+			<time><b><%= format_date_full(post.date) %></b></time> 
+			<a  href="<%- url_for(post.path) %>"><%= post.title || __('Untitled')%></a>
+			<br/>><span>
+				<% if( post.tags &&  post.tags.length > 0 ) {%>
+					<% post.tags.forEach(tag => {%>
+					<a href="<%- url_for(lang_prepend(tag.path)) %>"><%= i18n_for_tag(tag.name) %></a> 
+					<% })%>
+				  <% }%>
+			</span>
+		</p>
+		<% local_post_count += 1 %>
+		<% }}) %>
+	</div>
+	<h2 class="home-title"><%= __('home.about') %></h2>
 
 	<%- include_md('_i18n/' + page_language() + '/intro.md') %>
 
@@ -22,19 +38,6 @@
 				<ul>
 					<% for (var i in site.data.support) { %>
 						<li><a href="<%= site.data.support[i] %>"><%= i %></a></li>
-					<% } %>
-				</ul>
-			</p>
-		</div>
-	</div>
-	<div>
-		<input id="toggle-list-1" class="toggle" type="checkbox">
-		<label for="toggle-list-1" class="fancy-toggle-1"><%= __('home.social') %></label>
-		<div class="list">
-			<p>
-				<ul>
-					<% for (var i in site.data.social) { %>
-						<li><a <% if (i == 'Mastodon') { %>rel="me" <% } %>href="<%= site.data.social[i] %>"><%= i %></a></li>
 					<% } %>
 				</ul>
 			</p>
@@ -65,6 +68,15 @@
 				</ul>
 			</p>
 		</div>
+	</div>
+	<div id="sec-contact">
+		<h3 class="home-title"><%= __('home.contact') %></h2>
+		<%- include_md('_data/contact.md') %>
+	</div>
+
+	<div id="sec-social">
+		<h3 class="home-title"><%= __('home.social') %></h2>
+		<%- include_md('_data/social.md') %>
 	</div>
 </div>
 

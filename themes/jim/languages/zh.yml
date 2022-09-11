@@ -15,6 +15,8 @@ common:
   tags: 標籤
 
 home:
+  about: 關於我
+  contact: "聯繫我的方式："
   support: '支持我的方式：'
   social: '這些地方可以找到我：'
   talks: '我的一些報告們：'
