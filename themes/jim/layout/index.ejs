@@ -30,22 +30,18 @@
 
 	<%- include_md('_i18n/' + page_language() + '/intro.md') %>
 
-	<div>
-		<input id="toggle-list-4" class="toggle" type="checkbox">
-		<label for="toggle-list-4" class="fancy-toggle-4"><%= __('home.support') %></label>
-		<div class="list">
-			<p>
-				<ul>
-					<% for (var i in site.data.support) { %>
-						<li><a href="<%= site.data.support[i] %>"><%= i %></a></li>
-					<% } %>
-				</ul>
-			</p>
-		</div>
+	<div id="sec-contact">
+		<h3 class="home-title"><%= __('home.contact') %></h2>
+		<%- include_md('_data/contact.md') %>
 	</div>
-	<div>
-		<input id="toggle-list-2" class="toggle" type="checkbox">
-		<label for="toggle-list-2" class="fancy-toggle-2"><%= __('home.talks') %></label>
+
+	<div id="sec-social">
+		<h3 class="home-title"><%= __('home.social') %></h2>
+		<%- include_md('_data/social.md') %>
+	</div>
+
+	<div id="sec-talks">
+		<h3 class="home-title"><%= __('home.talks') %></h2>
 		<div class="list">
 			<p>
 				<ul>
@@ -57,26 +53,16 @@
 		</div>
 	</div>
 	<div>
-		<input id="toggle-list-3" class="toggle" type="checkbox">
-		<label for="toggle-list-3" class="fancy-toggle-3"><%= __('home.friends') %></label>
+		<h3 class="home-title"><%= __('home.support') %></h3>
 		<div class="list">
 			<p>
 				<ul>
-					<% for (var friend in site.data.friends) { %>
-					<li><a href="<%= site.data.friends[friend] %>"><%= friend %></a></li>
+					<% for (var i in site.data.support) { %>
+						<li><a href="<%= site.data.support[i] %>"><%= i %></a></li>
 					<% } %>
 				</ul>
 			</p>
 		</div>
-	</div>
-	<div id="sec-contact">
-		<h3 class="home-title"><%= __('home.contact') %></h2>
-		<%- include_md('_data/contact.md') %>
-	</div>
-
-	<div id="sec-social">
-		<h3 class="home-title"><%= __('home.social') %></h2>
-		<%- include_md('_data/social.md') %>
 	</div>
 </div>
 

@@ -1,4 +1,5 @@
-- XMPP/Jabber: patrickwu@yax.im
+- XMPP/Jabber: 
+  - patrick@chat.pigeons.cloud (*)
+  - patrickwu@yax.im
 - Matrix: [@patrickwu:matrix.org](https://matrix.to/#/@patrickwu:matrix.org)
 - Email: [i@pkwl.ink](mailto:i@pkwl.ink)
-- Discord: i-forgor-my-password#4712
