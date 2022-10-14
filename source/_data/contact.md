@@ -1,5 +1,3 @@
-- XMPP/Jabber: 
-  - patrick@chat.pigeons.cloud (*)
-  - patrickwu@yax.im
+- XMPP/Jabber: patrick@pigeons.cloud
 - Matrix: [@patrickwu:matrix.org](https://matrix.to/#/@patrickwu:matrix.org)
 - Email: [i@pkwl.ink](mailto:i@pkwl.ink)

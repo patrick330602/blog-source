@@ -1,4 +1,5 @@
-- Mastodon: <a href="https://mstdn.social/@patrickwu" rel="me">@patrickwu@mstdn.social</a>
+- Mastodon: <a href="https://tree.pigeons.cloud/@patrickwu" rel="me">@patrick@tree.pigeons.cloud</a>
+- Pixelfed: <a href="https://pix.pigeons.cloud/@patrick"  rel="me">@patrick@pix.pigeons.cloud</a>
 - Twitter: [@callmepkwu](https://twitter.com/callmepkwu)
 - GitHub: [patrick330602](https://github.com/patrick330602)
 - DeviantArt: [callmepk](https://www.deviantart.com/callmepk)
